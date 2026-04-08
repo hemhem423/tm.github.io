@@ -111,10 +111,10 @@
         bottom: 0;
         width: var(--sidebar-w);
         background: var(--color-base);
-        border: 5px solid var(--color-border);
+        border: 1px solid var(--color-border);
         border-radius: 3rem;
-        margin: 3px 0 -25px;
-
+        margin: 3px 3px -25px;
+        box-shadow: 3px 3px 10px var(--color-mid-gray);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -156,7 +156,7 @@
         gap: 1rem;
         padding: 1rem 1.2rem;
         border-radius: 10px;
-        font-family: var(--font-mono);
+        
         font-size: 2rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
@@ -197,7 +197,7 @@
       .sidebar__vert-label {
         writing-mode: vertical-rl;
         text-orientation: mixed;
-        font-family: var(--font-mono);
+        
         font-size: 0.95rem;
         letter-spacing: 0.3em;
         text-transform: uppercase;
@@ -217,7 +217,7 @@
         gap: 0.7rem;
       }
       .sidebar__social {
-        font-family: var(--font-mono);
+        
         font-size: 0.95rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -236,7 +236,7 @@
         transform: translateX(0);
       }
       .sidebar__copy {
-        font-family: var(--font-mono);
+        
         font-size: 0.85rem;
         color: var(--color-mid-gray);
         opacity: 0.4;
@@ -248,9 +248,9 @@
         display: none;
         position: fixed;
         top: 1.8rem;
-        left: 1.6rem;
+        right: 1.6rem;
         z-index: 300;
-        background: var(--color-ink);
+        background: var(--color-coral);
         color: var(--color-base);
         border: none;
         width: 42px;
@@ -336,7 +336,7 @@
         padding: 1.6rem 2rem;
       }
       .hero__cell-cat {
-        font-family: var(--font-mono);
+        
         font-size: 0.85rem;
         letter-spacing: 0.15em;
         text-transform: uppercase;
@@ -427,7 +427,7 @@
         align-items: center;
       }
       .hero__cat {
-        font-family: var(--font-mono);
+        
         font-size: 1.05rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
@@ -445,7 +445,7 @@
         border-bottom-color: var(--color-coral);
       }
       .hero__bar-right {
-        font-family: var(--font-mono);
+        
         font-size: 1rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
@@ -476,7 +476,7 @@
         animation: sLine 1.5s ease-in-out infinite;
       }
       .hero__scroll-txt {
-        font-family: var(--font-mono);
+        
         font-size: 0.85rem;
         letter-spacing: 0.25em;
         text-transform: uppercase;
@@ -516,7 +516,7 @@
         width: max-content;
       }
       .marquee__item {
-        font-family: var(--font-mono);
+        
         font-size: 1.1rem;
         letter-spacing: 0.18em;
         text-transform: uppercase;
@@ -548,7 +548,7 @@
         padding: clamp(80px, 10vw, 140px) clamp(3.2rem, 5vw, 7.2rem);
       }
       .section-label {
-        font-family: var(--font-mono);
+        
         font-size: 1.05rem;
         letter-spacing: 0.2em;
         text-transform: uppercase;
@@ -597,7 +597,7 @@
         margin-bottom: 0.4em;
       }
       .works__all {
-        font-family: var(--font-mono);
+        
         letter-spacing: 0.1em;
         text-transform: uppercase;
         border-bottom: 1px solid;
@@ -642,9 +642,8 @@
       }
 
       .wc__thumb {
-        aspect-ratio: 16/9;
+        height: 100%;
         overflow: hidden;
-        position: relative;
       }
       .wc:nth-child(2) .wc__thumb,
       .wc:nth-child(3) .wc__thumb {
@@ -718,7 +717,7 @@
         margin-bottom: 0.8rem;
       }
       .wc__tag {
-        font-family: var(--font-mono);
+        
         letter-spacing: 0.12em;
         text-transform: uppercase;
         background: var(--color-ink);
@@ -740,135 +739,285 @@
         line-height: 1.7;
       }
 
-      /* ============================================================
-       About Snippet
-    ============================================================ */
-      .about {
-        background: var(--color-ink);
-        color: #fff;
-        position: relative;
-        overflow: hidden;
-      }
-      .about__deco {
-        position: absolute;
-        right: -2%;
-        top: 50%;
-        transform: translateY(-50%);
-        font-family: var(--font-display);
-        font-size: clamp(10rem, 22vw, 28rem);
-        font-weight: 800;
-        color: rgba(255, 255, 255, 0.025);
-        letter-spacing: -0.05em;
-        white-space: nowrap;
-        pointer-events: none;
-      }
-      .about__inner {
-        position: relative;
-        z-index: 1;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: clamp(4rem, 8vw, 10rem);
-        align-items: center;
-      }
-      .about__lbl {
-        color: rgba(255, 255, 255, 0.4);
-      }
-      .about__heading {
-        font-family: var(--font-display);
-        font-size: clamp(3.2rem, 4.5vw, 5.6rem);
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        line-height: 1.05;
-        margin-bottom: 2.8rem;
-      }
-      .about__heading em {
-        font-style: normal;
-        color: var(--color-turquoise);
-      }
-      .about__text {
-        font-size: clamp(1.4rem, 1.5vw, 1.7rem);
-        color: rgba(255, 255, 255, 0.6);
-        line-height: 1.85;
-        margin-bottom: 3.6rem;
-      }
-      .about__strengths {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.4rem;
-      }
-      .si {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        border-radius: 14px;
-        padding: 2.2rem;
-        transition: all var(--tr);
-      }
-      .si:hover {
-        background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(255, 255, 255, 0.18);
-        transform: translateY(-4px);
-      }
-      .si__icon {
-        font-size: 2.4rem;
-        margin-bottom: 1rem;
-        display: block;
-      }
-      .si__title {
-        font-family: var(--font-display);
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        color: #fff;
-      }
-      .si__desc {
-        font-size: 1.25rem;
-        color: rgba(255, 255, 255, 0.45);
-        line-height: 1.6;
-      }
+      /* ==========================================================
+   About — Profile Card Section
+   既存の .about セクションに追記するスタイル
+   ========================================================== */
 
-      /* Buttons */
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 1.3rem 3rem;
-        border-radius: 100px;
-        font-family: var(--font-mono);
-        font-size: 1.2rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-weight: 700;
-        cursor: pointer;
-        border: 2px solid transparent;
-        transition: all var(--tr);
-      }
-      .btn--teal {
-        background: var(--color-turquoise);
-        color: var(--color-ink);
-        border-color: var(--color-turquoise);
-      }
-      .btn--teal:hover {
-        background: transparent;
-        color: var(--color-turquoise);
-        transform: translateY(-3px);
-      }
-      .btn--coral {
-        background: var(--color-coral);
-        color: #fff;
-        border-color: var(--color-coral);
-      }
-      .btn--coral:hover {
-        background: transparent;
-        color: var(--color-coral);
-        transform: translateY(-3px);
-        box-shadow: 0 12px 32px rgba(255, 107, 107, 0.28);
-      }
-      .btn__arr {
-        transition: transform var(--tr);
-      }
-      .btn:hover .btn__arr {
-        transform: translateX(4px);
-      }
+/* ----------------------------------------------------------
+   Section 背景 + レイアウト
+   ---------------------------------------------------------- */
+.about {
+  /* 既存の padding はそのまま利用 */
+  background: transparent; /* 外側は既存の --color-ink を維持 */
+}
+
+/* ---- グレーの丸角ステージ (yansu KIM / doisena 参考) ---- */
+.top-profile {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  min-height: 480px;
+  /* clip-path はJS側で付与 */
+}
+
+/* ---- カード本体 ---- */
+.top-profile__card {
+  background: #ffffff;
+  border: 2px solid #111111;
+  border-radius: 22px;
+  padding: clamp(28px, 4vw, 44px) clamp(28px, 4vw, 48px);
+  width: 100%;
+  max-width: 740px;
+  /* 初期の傾き: JSで上書き */
+  transform: rotate(2.35deg);
+  will-change: transform;
+  transition: transform 0.1s linear;
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- カード前面レイアウト ---- */
+.top-profile__foward {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 4vw, 48px);
+}
+
+/* ----------------------------------------------------------
+   左: アバター円
+   ---------------------------------------------------------- */
+.top-profile__foward > figure {
+  flex-shrink: 0;
+  position: relative;
+  width: clamp(120px, 18vw, 180px);
+  height: clamp(120px, 18vw, 180px);
+}
+
+
+
+/* メイン画像 */
+.top-profile__foward > figure > img:first-of-type {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #111111;
+  object-fit: cover;
+  display: block;
+  background: #f5f5f5;
+}
+
+/* ホバー差し替え画像群 */
+.top-profile__foward > figure .hover {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.top-profile__foward > figure .hover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.top-profile__foward > figure .hover img.is-current {
+  opacity: 1;
+}
+
+/* ----------------------------------------------------------
+   右: テキスト群
+   ---------------------------------------------------------- */
+.top-profile__txts {
+  flex: 1;
+  min-width: 0;
+}
+
+/* "PROFILE" — アウトライン見出し */
+.top-profile__hd {
+  margin: 0 0 14px;
+  line-height: 1;
+}
+
+/* SVGテキスト版 (元コードに合わせる) */
+.top-profile__hd .svg-text {
+  width: clamp(120px, 24vw, 220px);
+  height: clamp(28px, 5vw, 50px);
+  overflow: visible;
+  display: block;
+}
+.top-profile__hd .svg-text text {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(26px, 4vw, 30px);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: none;
+  stroke: #111111;
+  stroke-width: 1.5;
+  dominant-baseline: hanging;
+}
+
+/* テキスト版フォールバック (SVG非使用時) */
+.top-profile__hd-text {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(26px, 5vw, 46px);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1.8px #111111;
+  display: block;
+}
+
+/* 職種 + 名前 */
+.top-profile__name {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 14px;
+  line-height: 1.2;
+}
+.top-profile__name .job {
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888888;
+  font-weight: 400;
+}
+.top-profile__name .name {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(18px, 3.5vw, 30px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #111111;
+}
+/* SVG版の名前 */
+.top-profile__name .name svg {
+  height: clamp(22px, 3.5vw, 36px);
+  width: auto;
+  display: block;
+}
+.top-profile__name .name svg use {
+  fill: #111111;
+}
+
+/* 説明文 */
+.top-profile__desc {
+  font-size: clamp(13px, 1.4vw, 15px);
+  color: #555555;
+  line-height: 1.85;
+  margin: 0 0 24px;
+  max-width: 42em;
+}
+
+/* ----------------------------------------------------------
+   "View More" ボタン
+   ---------------------------------------------------------- */
+.link-btn .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 700;
+  color: #111111;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+/* テキスト下線アニメーション */
+.link-btn .btn .txt-foward {
+  position: relative;
+}
+.link-btn .btn .txt-foward::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px; right: 0;
+  height: 1.5px;
+  background: #111111;
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.link-btn .btn:hover .txt-foward::after {
+  transform: scaleX(0);
+  transform-origin: right center;
+}
+
+/* 裏テキスト（日本語）: アニメーション用 */
+.link-btn .btn .txt-back {
+  position: absolute;
+  left: 0; top: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(8px);
+  font-size: 0.85em;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+.link-btn .btn:hover .txt-back {
+  opacity: 1;
+  transform: translateY(14px);
+}
+
+/* 矢印コンテナ */
+.link-btn .btn .arw {
+  display: flex;
+  align-items: center;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.link-btn .btn .arw svg {
+  width: 17px; height: 16px;
+}
+.link-btn .btn:hover .arw {
+  transform: translateX(5px);
+}
+
+/* 下線 */
+.link-btn .btn .line {
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: calc(100% - 29px); /* arwを除く幅 */
+  height: 1.5px;
+  background: #111111;
+  /* txt-foward::after に統合済みのため非表示でも可 */
+  display: none;
+}
+
+/* ----------------------------------------------------------
+   レスポンシブ
+   ---------------------------------------------------------- */
+@media (max-width: 640px) {
+  .top-profile__foward {
+    flex-direction: column;
+    text-align: center;
+  }
+  .top-profile__foward > figure {
+    width: 120px;
+    height: 120px;
+  }
+  .top-profile__name {
+    justify-content: center;
+  }
+  .top-profile__hd .svg-text {
+    margin-inline: auto;
+  }
+  .link-btn {
+    text-align: center;
+  }
+}
 
       /* ============================================================
        Contact
@@ -919,7 +1068,7 @@
         flex-wrap: wrap;
       }
       .contact__soc {
-        font-family: var(--font-mono);
+        
         font-size: 1rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
@@ -939,7 +1088,7 @@
       }
       .fg__lbl {
         display: block;
-        font-family: var(--font-mono);
+        
         font-size: 2rem;
         letter-spacing: 0.15em;
         text-transform: uppercase;
@@ -975,7 +1124,9 @@
         resize: vertical;
       }
       .cf__submit {
-        width: 100%;
+        width: 300px;
+        display: block;
+        margin: auto;
         background: var(--color-coral);
         color: #fff;
         border: none;
@@ -1020,7 +1171,7 @@
         color: var(--color-coral);
       }
       .footer__tagline {
-        font-family: var(--font-mono);
+        
         font-size: 1rem;
         letter-spacing: 0.1em;
         color: rgba(255, 255, 255, 0.38);
@@ -1033,7 +1184,7 @@
         line-height: 4.5rem;
       }
       .footer__nav-lnk {
-        font-family: var(--font-mono);
+        
         letter-spacing: 0.12em;
         text-transform: uppercase;
         transition: color var(--tr);
@@ -1049,7 +1200,7 @@
         gap: 1.2rem;
       }
       .footer__copy {
-        font-family: var(--font-mono);
+        
         color: rgba(255, 255, 255, 0.28);
       }
       .footer__socs {
