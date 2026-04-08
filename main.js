@@ -141,90 +141,107 @@
  *           <script defer> で読み込む
  */
 
+
 (() => {
   'use strict';
-
+ 
   /* ----------------------------------------------------------
-     設定
+     設定: 数値を大きくして動きをリッチに
   ---------------------------------------------------------- */
   const CONFIG = {
-    baseRotate:    2.35,   // 初期傾き (deg)
-    tiltRange:     6,      // マウス追従の最大傾き (deg)
-    rotateXRange:  8,      // X軸方向の最大傾き (deg)
-    easeIn:        'transform 0.08s linear',
-    easeOut:       'transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-    scrollReveal:  true,   // スクロール時のclip-path展開を使うか
+    baseRotate:   2.35,   // 初期傾き (deg)
+    tiltRange:    12,     // ← 6→12 : 横方向の最大傾き
+    rotateXRange: 14,     // ← 8→14 : 縦方向の最大傾き
+    lerpSpeed:    0.1,    // ← 0.15→0.10 : 追従を少し遅く(慣性感)
+    easeIn:       'transform 0.06s linear',
+    easeOut:      'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+    scrollReveal: true,
   };
-
+ 
+  const lerp  = (a, b, t) => a + (b - a) * t;
+  const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+ 
   /* ----------------------------------------------------------
-     ユーティリティ
-  ---------------------------------------------------------- */
-  const lerp = (a, b, t) => a + (b - a) * t;
-
-  function clamp(val, min, max) {
-    return Math.min(Math.max(val, min), max);
-  }
-
-  /* ----------------------------------------------------------
-     プロフィールカード: マウス追従傾き
+     【強化】カード傾き + グレア追従 + バッジ浮遊
   ---------------------------------------------------------- */
   function initCardTilt() {
-    const stage = document.getElementById('js-top-profile');
-    const card  = document.getElementById('js-top-card');
+    const stage  = document.getElementById('js-top-profile');
+    const card   = document.getElementById('js-top-card');
     if (!stage || !card) return;
-
-    let isInside   = false;
-    let targetRotX = 0;
-    let targetRotY = 0;
-    let currentRotX = 0;
-    let currentRotY = 0;
-    let rafId = null;
-
-    /* マウスが乗ったとき */
+ 
+    let isInside = false;
+    let targetRotX = 0, targetRotY = 0;
+    let curRotX    = 0, curRotY    = 0;
+    let targetGx   = 50, targetGy  = 50;  // グレア中心 %
+    let curGx      = 50, curGy     = 50;
+    let rafId      = null;
+ 
+    /* ── タグ要素: 浮遊するバッジ的な存在として扱う ── */
+    const badges = card.querySelectorAll('.top-profile__name .job');
+ 
     stage.addEventListener('mouseenter', () => {
       isInside = true;
       card.style.transition = CONFIG.easeIn;
+      badges.forEach(b => b.style.transition = 'transform 0.5s ease, color 0.3s ease');
       startRaf();
     });
-
-    /* マウス移動 */
+ 
     stage.addEventListener('mousemove', (e) => {
       const rect = stage.getBoundingClientRect();
-      const nx   = (e.clientX - rect.left)  / rect.width  - 0.5; // -0.5 〜 0.5
-      const ny   = (e.clientY - rect.top)   / rect.height - 0.5;
-
-      targetRotY = clamp(nx * CONFIG.tiltRange,    -CONFIG.tiltRange,    CONFIG.tiltRange);
-      targetRotX = clamp(-ny * CONFIG.rotateXRange, -CONFIG.rotateXRange, CONFIG.rotateXRange);
+      const nx = (e.clientX - rect.left)  / rect.width  - 0.5;  // -0.5〜0.5
+      const ny = (e.clientY - rect.top)   / rect.height - 0.5;
+ 
+      targetRotY = clamp(nx *  CONFIG.tiltRange,     -CONFIG.tiltRange,     CONFIG.tiltRange);
+      targetRotX = clamp(-ny * CONFIG.rotateXRange,  -CONFIG.rotateXRange,  CONFIG.rotateXRange);
+ 
+      /* グレア: マウス位置をパーセントで */
+      const cardRect = card.getBoundingClientRect();
+      targetGx = clamp(((e.clientX - cardRect.left) / cardRect.width)  * 100, 0, 100);
+      targetGy = clamp(((e.clientY - cardRect.top)  / cardRect.height) * 100, 0, 100);
+ 
+      /* バッジを逆方向にわずかに動かす (視差) */
+      badges.forEach(b => {
+        b.style.transform = `translate(${-nx * 6}px, ${-ny * 4}px)`;
+      });
     });
-
-    /* マウスが外れたとき */
+ 
     stage.addEventListener('mouseleave', () => {
-      isInside    = false;
-      targetRotX  = 0;
-      targetRotY  = 0;
+      isInside   = false;
+      targetRotX = 0;
+      targetRotY = 0;
+      targetGx   = 50;
+      targetGy   = 50;
       card.style.transition = CONFIG.easeOut;
+      badges.forEach(b => {
+        b.style.transform = 'translate(0,0)';
+      });
     });
-
-    /* RAF ループ: lerp で滑らかに追従 */
+ 
     function startRaf() {
       if (rafId) return;
       function tick() {
-        currentRotX = lerp(currentRotX, targetRotX, 0.15);
-        currentRotY = lerp(currentRotY, targetRotY, 0.15);
-
-        const rotate   = CONFIG.baseRotate + currentRotY * 0.4;
-        const rotateX  = currentRotX.toFixed(4);
-        const rotateY  = currentRotY.toFixed(4);
-
+        curRotX = lerp(curRotX, targetRotX, CONFIG.lerpSpeed);
+        curRotY = lerp(curRotY, targetRotY, CONFIG.lerpSpeed);
+        curGx   = lerp(curGx,   targetGx,   0.08);
+        curGy   = lerp(curGy,   targetGy,   0.08);
+ 
+        const rotate = CONFIG.baseRotate + curRotY * 0.35;
         card.style.transform =
           `rotate(${rotate.toFixed(4)}deg) `
-          + `rotateX(${rotateX}deg) `
-          + `rotateY(${rotateY}deg)`;
-
-        /* 収束判定: 外にいて値が小さければ止める */
-        const dist = Math.abs(currentRotX) + Math.abs(currentRotY);
-        if (!isInside && dist < 0.01) {
+          + `rotateX(${curRotX.toFixed(4)}deg) `
+          + `rotateY(${curRotY.toFixed(4)}deg)`;
+ 
+        /* CSS変数でグレア位置を更新 */
+        card.style.setProperty('--gx', `${curGx.toFixed(2)}%`);
+        card.style.setProperty('--gy', `${curGy.toFixed(2)}%`);
+ 
+        /* 収束判定 */
+        const dist = Math.abs(curRotX) + Math.abs(curRotY)
+                   + Math.abs(curGx - 50) + Math.abs(curGy - 50);
+        if (!isInside && dist < 0.1) {
           card.style.transform = `rotate(${CONFIG.baseRotate}deg)`;
+          card.style.setProperty('--gx', '50%');
+          card.style.setProperty('--gy', '50%');
           rafId = null;
           return;
         }
@@ -233,192 +250,171 @@
       rafId = requestAnimationFrame(tick);
     }
   }
-
+ 
   /* ----------------------------------------------------------
-     スクロール時: clip-path でステージが展開するアニメーション
-     (doisena.jp の「inset(0px 0% round 20px)」を再現)
+     【強化】スクロールで clip-path 展開 + カード scale イン
   ---------------------------------------------------------- */
   function initStageReveal() {
     if (!CONFIG.scrollReveal) return;
-
     const stage = document.getElementById('js-top-profile');
+    const card  = document.getElementById('js-top-card');
     if (!stage) return;
-
-    /* 初期値: 両サイドが閉じている */
-    stage.style.clipPath = 'inset(0px 8% round 20px)';
+ 
+    /* 初期状態: 両サイドを縮める + カードを少し小さく */
+    stage.style.clipPath  = 'inset(0px 10% round 20px)';
     stage.style.transition = 'none';
-
+    if (card) {
+      card.style.opacity   = '0';
+      card.style.transform = `rotate(${CONFIG.baseRotate}deg) scale(0.92)`;
+    }
+ 
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-
-          /* 展開アニメーション */
+ 
+          /* Step1: ステージを広げる */
           requestAnimationFrame(() => {
             stage.style.transition =
               'clip-path 1.0s cubic-bezier(0.16, 1, 0.3, 1)';
             stage.style.clipPath = 'inset(0px 0% round 20px)';
+ 
+            /* Step2: 少し遅れてカードをフェードスケールイン */
+            if (card) {
+              setTimeout(() => {
+                card.style.transition =
+                  'opacity 0.7s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)';
+                card.style.opacity   = '1';
+                card.style.transform = `rotate(${CONFIG.baseRotate}deg) scale(1)`;
+ 
+                /* アニメ完了後に transition をリセット (JS制御に戻す) */
+                setTimeout(() => {
+                  card.style.transition = CONFIG.easeOut;
+                }, 900);
+              }, 300);
+            }
           });
-
+ 
           io.unobserve(stage);
         });
       },
       {
-        /* main-wrap がスクロールコンテナの場合、root を指定 */
         root:      document.getElementById('js-main') || null,
-        threshold: 0.2,
+        threshold: 0.15,
       }
     );
     io.observe(stage);
   }
-
+ 
   /* ----------------------------------------------------------
-     カード: スクロール連動の subtle 浮遊感
-     (stageが画面に入るにつれカードが少し上にスライド)
+     スクロール視差: カードが少し浮き上がる
   ---------------------------------------------------------- */
   function initCardParallax() {
-    const stage = document.getElementById('js-top-profile');
-    const card  = document.getElementById('js-top-card');
+    const stage    = document.getElementById('js-top-profile');
+    const card     = document.getElementById('js-top-card');
     if (!stage || !card) return;
-
+ 
     const scroller = document.getElementById('js-main') || window;
-
+ 
     function onScroll() {
+      if (stage.matches(':hover')) return;
       const rect     = stage.getBoundingClientRect();
       const vpH      = window.innerHeight;
-      /* stage中心のビューポート内位置 -1〜1 */
-      const progress = 1 - (rect.top + rect.height / 2) / vpH;
-      const clampedP = clamp(progress, 0, 1);
-
-      /* マウス操作中は干渉しない */
-      if (stage.matches(':hover')) return;
-
-      const translateY = lerp(3.5, 0, clampedP); // 3.5% → 0%
-      /* 元コードの style="transform: translate(0%, 3.08%)" を再現 */
+      const progress = clamp(1 - (rect.top + rect.height / 2) / vpH, 0, 1);
+      const ty       = lerp(4.5, 0, progress);
       card.style.transform =
-        `translateY(${translateY.toFixed(3)}%) rotate(${CONFIG.baseRotate}deg)`;
+        `translateY(${ty.toFixed(3)}%) rotate(${CONFIG.baseRotate}deg)`;
     }
-
+ 
     scroller.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // 初期化
+    onScroll();
   }
-
+ 
   /* ----------------------------------------------------------
-     ホバー: アバター画像の切り替え
-     .hover img.is-current を順番に切り替え
-  ---------------------------------------------------------- */
-  function initAvatarHover() {
-    const figure = document.querySelector('.top-profile__foward > figure');
-    if (!figure) return;
-
-    const hoverImgs = figure.querySelectorAll('.hover img');
-    if (!hoverImgs.length) return;
-
-    let current = 0;
-    let intervalId = null;
-
-    figure.addEventListener('mouseenter', () => {
-      hoverImgs.forEach((img) => img.classList.remove('is-current'));
-      current = 0;
-      hoverImgs[current]?.classList.add('is-current');
-
-      intervalId = setInterval(() => {
-        hoverImgs[current]?.classList.remove('is-current');
-        current = (current + 1) % hoverImgs.length;
-        hoverImgs[current]?.classList.add('is-current');
-      }, 220);
-    });
-
-    figure.addEventListener('mouseleave', () => {
-      clearInterval(intervalId);
-      hoverImgs.forEach((img) => img.classList.remove('is-current'));
-    });
-  }
-
-  /* ----------------------------------------------------------
-     SVGテキスト: "PROFILE" アウトライン描画アニメーション
-     (svg-text text の stroke-dashoffset をアニメーション)
+     SVG "profile" 文字: 描画アニメーション
   ---------------------------------------------------------- */
   function initProfileTextDraw() {
     const svgText = document.querySelector('.top-profile__hd .svg-text text');
     if (!svgText) return;
-
-    /* 文字の総パス長を取得して設定 */
-    const length = svgText.getTotalLength?.() ?? 800;
-    svgText.style.strokeDasharray  = length;
-    svgText.style.strokeDashoffset = length;
-    svgText.style.fill             = 'none';
-    svgText.style.transition       = 'none';
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          svgText.style.transition =
-            `stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
-             fill 0.4s ease 1.4s`;
-          svgText.style.strokeDashoffset = '0';
-          svgText.style.fill             = 'none'; /* アウトラインのまま */
-          io.unobserve(svgText);
-        });
-      },
-      {
-        root:      document.getElementById('js-main') || null,
-        threshold: 0.5,
-      }
-    );
-    io.observe(svgText);
+ 
+    try {
+      const length = svgText.getTotalLength?.() ?? 800;
+      svgText.style.strokeDasharray  = length;
+      svgText.style.strokeDashoffset = length;
+      svgText.style.fill             = 'none';
+      svgText.style.transition       = 'none';
+ 
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            svgText.style.transition =
+              'stroke-dashoffset 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.5s';
+            svgText.style.strokeDashoffset = '0';
+            io.unobserve(svgText);
+          });
+        },
+        { root: document.getElementById('js-main') || null, threshold: 0.5 }
+      );
+      io.observe(svgText);
+    } catch (_) { /* SVGText が使えない環境はスキップ */ }
   }
-
+ 
   /* ----------------------------------------------------------
-     フォールバック: SVGが使えない場合の -webkit-text-stroke 版
-     .top-profile__hd-text があれば同様に描画アニメーション
+     【追加】カード上: figure にリング ripple エフェクト
+     クリック/ホバーで円形の波紋を発生させる
   ---------------------------------------------------------- */
-  function initFallbackHdReveal() {
-    const hd = document.querySelector('.top-profile__hd-text');
-    if (!hd) return;
-
-    hd.style.opacity   = '0';
-    hd.style.transform = 'translateY(20px)';
-    hd.style.transition = 'none';
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          hd.style.transition = 'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s';
-          hd.style.opacity    = '1';
-          hd.style.transform  = 'translateY(0)';
-          io.unobserve(hd);
-        });
-      },
-      {
-        root:      document.getElementById('js-main') || null,
-        threshold: 0.3,
-      }
-    );
-    io.observe(hd);
+  function initFigureRipple() {
+    const figure = document.querySelector('.top-profile__foward > figure');
+    if (!figure) return;
+ 
+    /* ripple 用 CSS を動的に挿入 */
+    if (!document.getElementById('ripple-style')) {
+      const s = document.createElement('style');
+      s.id = 'ripple-style';
+      s.textContent = `
+        .figure-ripple {
+          position: absolute;
+          border-radius: 50%;
+          border: 2px solid var(--color-coral, #ff5c24);
+          animation: figRipple 0.9s ease-out forwards;
+          pointer-events: none;
+          z-index: 10;
+        }
+        @keyframes figRipple {
+          0%   { width: 60%; height: 60%; top: 20%; left: 20%; opacity: 0.8; }
+          100% { width: 140%; height: 140%; top: -20%; left: -20%; opacity: 0; }
+        }
+      `;
+      document.head.appendChild(s);
+    }
+ 
+    figure.style.position = 'relative';
+ 
+    figure.addEventListener('mouseenter', () => {
+      const ripple = document.createElement('span');
+      ripple.className = 'figure-ripple';
+      figure.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 900);
+    });
   }
-
+ 
   /* ----------------------------------------------------------
      エントリーポイント
   ---------------------------------------------------------- */
   function init() {
-    initStageReveal();
-    initCardTilt();
-    initCardParallax();
-    initAvatarHover();
-    initProfileTextDraw();
-    initFallbackHdReveal();
+    initStageReveal();   // clip-path展開 + カードスケールイン
+    initCardTilt();      // マウス追従傾き + グレア + バッジ視差
+    initCardParallax();  // スクロール視差
+    initProfileTextDraw(); // SVG文字描画
+    initFigureRipple();  // figure hover ripple
   }
-
-  /* DOM読み込み済みなら即実行、そうでなければ待機 */
+ 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
-
 })();
         /* ---- Contact form ---- */
         const form = document.getElementById("js-form");
