@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TONDAMA | About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="page.css" />
+  </head>
+  <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="js-loader">
+      <div class="page-loader__inner">TONDAM<span>A</span></div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="c-dot" id="js-cdot"></div>
+    <div class="c-ring" id="js-cring"></div>
+
+    <!-- Mobile toggle -->
+    <button class="sidebar__toggle" id="js-toggle" aria-label="メニュー">
+      <span class="sidebar__toggle-line"></span>
+      <span class="sidebar__toggle-line"></span>
+      <span class="sidebar__toggle-line"></span>
+    </button>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="js-sidebar">
+      <div>
+        <a href="index.html" class="sidebar__logo"
+          >TONDAM<span>A</span><br /><span>P</span>ORTFOLIO</a
+        >
+        <nav class="sidebar__nav" aria-label="サイドナビ">
+          <a href="index.html" class="sidebar__nav-item" data-sec="hero">
+            <span class="sidebar__nav-dot"></span>Home
+          </a>
+          <a href="works.html" class="sidebar__nav-item">
+            <span class="sidebar__nav-dot"></span>Works
+          </a>
+          <a href="about.html" class="sidebar__nav-item is-active">
+            <span class="sidebar__nav-dot"></span>About
+          </a>
+          <a href="index.html#contact" class="sidebar__nav-item">
+            <span class="sidebar__nav-dot"></span>Contact
+          </a>
+        </nav>
+      </div>
+      <div class="sidebar__bottom">
+        <div class="sidebar__socials">
+          <a href="#" class="sidebar__social" target="_blank" rel="noopener"
+            >Twitter</a
+          >
+          <a href="#" class="sidebar__social" target="_blank" rel="noopener"
+            >Instagram</a
+          >
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrap" id="js-main">
+      <!-- Hero -->
+      <section class="about-hero">
+        <h1 class="about-hero__title js-reveal"><span>A</span>bout</h1>
+        <p class="about-hero__sub js-reveal">
+          東京を拠点に活動するWebディレクター。<br />
+          ユーザーの心を動かすWebサイトを、<br />
+          企画から実装まで一貫して手がけます。
+        </p>
+      </section>
+
+      <!-- Profile Block -->
+      <section class="profile-block" id="profile">
+        <div class="profile-block__deco" aria-hidden="true"></div>
+
+        <div class="profile-block__img-wrap js-reveal">
+          <div class="profile-block__img">
+            <div class="profile-block__img-placeholder">
+              <!-- アイコン画像に差し替え: <img src="image/icon.png" ...> -->
+              <svg
+                width="180"
+                height="180"
+                viewBox="0 0 180 180"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="プロフィール写真"
+              >
+                <circle cx="90" cy="75" r="40" fill="#3a3a3a" />
+                <ellipse cx="90" cy="145" rx="60" ry="35" fill="#2a2a2a" />
+                <text
+                  x="90"
+                  y="82"
+                  text-anchor="middle"
+                  font-family="sans-serif"
+                  font-size="14"
+                  fill="rgba(255,255,255,0.3)"
+                >
+                  PHOTO
+                </text>
+                <text
+                  x="90"
+                  y="100"
+                  text-anchor="middle"
+                  font-family="sans-serif"
+                  font-size="11"
+                  fill="rgba(255,255,255,0.2)"
+                >
+                  image/icon.png
+                </text>
+              </svg>
+            </div>
+          </div>
+          <div class="profile-block__badge">
+            Web Director<br />
+            <small>since 2020</small>
+          </div>
+        </div>
+
+        <div class="profile-block__content js-reveal">
+          <p class="profile-block__label">Profile</p>
+          <h2 class="profile-block__name-en">Masahiro Toda</h2>
+          <p class="profile-block__name-ja">戸田 雅大</p>
+          <span class="profile-block__job">🖥️ Web Director</span>
+          <p class="profile-block__bio">
+            はじめまして。東京でWebディレクターとして活動しています。
+            Webサイトの企画・設計から制作ディレクション、コーディングまで
+            幅広く対応しています。ユーザーにとって使いやすく、
+            クライアントのビジネスに貢献できるサイトづくりを大切にしています。
+          </p>
+          <div class="profile-block__data">
+            <div class="profile-block__data-item">
+              <p class="profile-block__data-label">Base</p>
+              <p class="profile-block__data-val">Tokyo, Japan</p>
+            </div>
+            <div class="profile-block__data-item">
+              <p class="profile-block__data-label">Experience</p>
+              <p class="profile-block__data-val">5+ Years</p>
+            </div>
+            <div class="profile-block__data-item">
+              <p class="profile-block__data-label">Works</p>
+              <p class="profile-block__data-val">30+ Projects</p>
+            </div>
+            <div class="profile-block__data-item">
+              <p class="profile-block__data-label">Status</p>
+              <p
+                class="profile-block__data-val"
+                style="color: var(--color-turquoise)"
+              >
+                Available ✓
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="skills">
+        <div class="skills__header js-reveal">
+          <p class="skills__label">Skills</p>
+          <h2 class="skills__title">できること</h2>
+        </div>
+        <div class="skills__grid">
+          <div class="skill-card js-reveal">
+            <span class="skill-card__num">01</span>
+            <span class="skill-card__icon">🗂️</span>
+            <h3 class="skill-card__title">Web Direction</h3>
+            <p class="skill-card__desc">
+              要件定義から納品まで、プロジェクト全体をディレクション。クライアントとの密なコミュニケーションで理想を形に。
+            </p>
+            <div class="skill-card__tags">
+              <span class="skill-card__tag">企画・提案</span>
+              <span class="skill-card__tag">要件定義</span>
+              <span class="skill-card__tag">進行管理</span>
+            </div>
+          </div>
+          <div class="skill-card js-reveal">
+            <span class="skill-card__num">02</span>
+            <span class="skill-card__icon">🎨</span>
+            <h3 class="skill-card__title">UI Design</h3>
+            <p class="skill-card__desc">
+              Figmaを使ったワイヤーフレーム・デザイン制作。ユーザビリティとブランドの世界観を両立したデザインを提案します。
+            </p>
+            <div class="skill-card__tags">
+              <span class="skill-card__tag">Figma</span>
+              <span class="skill-card__tag">ワイヤーフレーム</span>
+              <span class="skill-card__tag">UI設計</span>
+            </div>
+          </div>
+          <div class="skill-card js-reveal">
+            <span class="skill-card__num">03</span>
+            <span class="skill-card__icon">💻</span>
+            <h3 class="skill-card__title">Front-end</h3>
+            <p class="skill-card__desc">
+              HTML/CSS/JavaScriptによるコーディング。パフォーマンスとアクセシビリティを意識した実装を心がけています。
+            </p>
+            <div class="skill-card__tags">
+              <span class="skill-card__tag">HTML / CSS</span>
+              <span class="skill-card__tag">JavaScript</span>
+              <span class="skill-card__tag">WordPress</span>
+            </div>
+          </div>
+          <div class="skill-card js-reveal">
+            <span class="skill-card__num">04</span>
+            <span class="skill-card__icon">📊</span>
+            <h3 class="skill-card__title">Analytics</h3>
+            <p class="skill-card__desc">
+              GA4・ヒートマップによる改善提案。数値をもとにサイトの課題を可視化し、継続的なPDCAを支援します。
+            </p>
+            <div class="skill-card__tags">
+              <span class="skill-card__tag">GA4</span>
+              <span class="skill-card__tag">ヒートマップ</span>
+              <span class="skill-card__tag">SEO</span>
+            </div>
+          </div>
+          <div class="skill-card js-reveal">
+            <span class="skill-card__num">05</span>
+            <span class="skill-card__icon">🤖</span>
+            <h3 class="skill-card__title">AI Integration</h3>
+            <p class="skill-card__desc">
+              ChatGPT・Cursor・Midjourneyなどを活用した制作フローの効率化。最新ツールで品質と速度を両立します。
+            </p>
+            <div class="skill-card__tags">
+              <span class="skill-card__tag">ChatGPT</span>
+              <span class="skill-card__tag">Cursor</span>
+              <span class="skill-card__tag">Midjourney</span>
+            </div>
+          </div>
+          <div class="skill-card js-reveal">
+            <span class="skill-card__num">06</span>
+            <span class="skill-card__icon">📱</span>
+            <h3 class="skill-card__title">Responsive</h3>
+            <p class="skill-card__desc">
+              スマートフォン・タブレット・PCに対応したレスポンシブデザイン。どの端末でも最適な体験を提供します。
+            </p>
+            <div class="skill-card__tags">
+              <span class="skill-card__tag">Mobile First</span>
+              <span class="skill-card__tag">クロスブラウザ</span>
+              <span class="skill-card__tag">アクセシビリティ</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Career -->
+      <section class="career">
+        <div class="career__header js-reveal">
+          <p class="career__label">Career</p>
+          <h2 class="career__title">経歴</h2>
+        </div>
+        <div class="career__list">
+          <div class="career__item js-reveal">
+            <div class="career__item-year">2024 -</div>
+            <div class="career__item-body">
+              <h3 class="career__item-title">フリーランス</h3>
+              <p class="career__item-place">Freelance Web Director</p>
+              <p class="career__item-desc">
+                フリーランスとして独立。中小企業・スタートアップのWebサイト制作・リニューアルをメインに対応。企画・設計・実装まで一気通貫で担当。
+              </p>
+            </div>
+          </div>
+          <div class="career__item js-reveal">
+            <div class="career__item-year">2022 - 2024</div>
+            <div class="career__item-body">
+              <h3 class="career__item-title">Webディレクター</h3>
+              <p class="career__item-place">株式会社〇〇エージェンシー</p>
+              <p class="career__item-desc">
+                中堅Web制作会社にてディレクターとして勤務。コーポレートサイト・ECサイト・LPなど年間20件以上のプロジェクトを担当。
+              </p>
+            </div>
+          </div>
+          <div class="career__item js-reveal">
+            <div class="career__item-year">2020 - 2022</div>
+            <div class="career__item-body">
+              <h3 class="career__item-title">Webデザイナー</h3>
+              <p class="career__item-place">株式会社〇〇デザイン</p>
+              <p class="career__item-desc">
+                デザイナーとしてキャリアをスタート。UI/UXデザインとフロントエンド実装を担当し、約30サイトの制作に携わる。
+              </p>
+            </div>
+          </div>
+          <div class="career__item js-reveal">
+            <div class="career__item-year">2016 - 2020</div>
+            <div class="career__item-body">
+              <h3 class="career__item-title">〇〇大学 卒業</h3>
+              <p class="career__item-place">情報工学部 メディアデザイン学科</p>
+              <p class="career__item-desc">
+                Webデザインとプログラミングを専攻。卒業制作でインタラクティブなWebアプリケーションを開発し、学内賞を受賞。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="about-cta">
+        <h2 class="about-cta__title js-reveal">
+          Let's work<br /><span>together.</span>
+        </h2>
+        <p class="about-cta__text js-reveal">
+          お仕事のご相談・お問い合わせはお気軽にどうぞ。<br />
+          新規サイト制作・リニューアル・LP制作、どんなことでもご相談ください。
+        </p>
+        <a href="index.html#contact" class="about-cta__btn js-reveal">
+          Contact Me →
+        </a>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__top">
+            <div>
+              <div class="footer__logo">TONDAM<span>A</span></div>
+            </div>
+            <nav class="footer__nav">
+              <a href="index.html" class="footer__nav-lnk">Home</a>
+              <a href="works.html" class="footer__nav-lnk">Works</a>
+              <a href="about.html" class="footer__nav-lnk">About</a>
+              <a href="index.html#contact" class="footer__nav-lnk">Contact</a>
+            </nav>
+          </div>
+          <div class="footer__bottom">
+            <p class="footer__copy">©2026 TONDAMA. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- /.main-wrap -->
+
+    <script src="page.js"></script>
+  </body>
+</html>
