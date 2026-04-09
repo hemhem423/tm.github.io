@@ -360,44 +360,7 @@
     } catch (_) { /* SVGText が使えない環境はスキップ */ }
   }
  
-  /* ----------------------------------------------------------
-     【追加】カード上: figure にリング ripple エフェクト
-     クリック/ホバーで円形の波紋を発生させる
-  ---------------------------------------------------------- */
-  function initFigureRipple() {
-    const figure = document.querySelector('.top-profile__foward > figure');
-    if (!figure) return;
- 
-    /* ripple 用 CSS を動的に挿入 */
-    if (!document.getElementById('ripple-style')) {
-      const s = document.createElement('style');
-      s.id = 'ripple-style';
-      s.textContent = `
-        .figure-ripple {
-          position: absolute;
-          border-radius: 50%;
-          border: 2px solid var(--color-coral, #ff5c24);
-          animation: figRipple 0.9s ease-out forwards;
-          pointer-events: none;
-          z-index: 10;
-        }
-        @keyframes figRipple {
-          0%   { width: 60%; height: 60%; top: 20%; left: 20%; opacity: 0.8; }
-          100% { width: 140%; height: 140%; top: -20%; left: -20%; opacity: 0; }
-        }
-      `;
-      document.head.appendChild(s);
-    }
- 
-    figure.style.position = 'relative';
- 
-    figure.addEventListener('mouseenter', () => {
-      const ripple = document.createElement('span');
-      ripple.className = 'figure-ripple';
-      figure.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 900);
-    });
-  }
+
  
   /* ----------------------------------------------------------
      エントリーポイント
@@ -407,7 +370,6 @@
     initCardTilt();      // マウス追従傾き + グレア + バッジ視差
     initCardParallax();  // スクロール視差
     initProfileTextDraw(); // SVG文字描画
-    initFigureRipple();  // figure hover ripple
   }
  
   if (document.readyState === 'loading') {
