@@ -360,7 +360,7 @@
 
       .works__grid {
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
         align-items: start;
       }
@@ -375,18 +375,6 @@
       .wc:hover {
         transform: translateY(-6px) rotate(-0.4deg);
         box-shadow: 0 24px 30px rgba(0, 0, 0, 0.12);
-      }
-      .wc:nth-child(1) {
-        grid-column: span 7;
-      }
-      .wc:nth-child(2) {
-        grid-column: span 5;
-      }
-      .wc:nth-child(3) {
-        grid-column: span 5;
-      }
-      .wc:nth-child(4) {
-        grid-column: span 7;
       }
 
 .wc__thumb {
@@ -486,7 +474,7 @@
   background: #ffffff;
   border: 3px solid #111;
   border-radius: 22px;
-  padding: clamp(28px, 4vw, 44px) clamp(28px, 4vw, 48px);
+  padding: clamp(28px, 5vw, 70px) clamp(28px, 4vw, 48px);
   width: 100%;
   max-width: 740px;
   position: relative;             /* ::before グレア用 */
@@ -999,7 +987,7 @@
           grid-template-columns: 1fr 1fr;
         }
         .works__grid {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: repeat(2, 1fr);
         }
         .wc:nth-child(n) {
           grid-column: span 1;
