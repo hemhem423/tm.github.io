@@ -1,21 +1,20 @@
 <!doctype html>
 <html lang="ja">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TONDAMA|ポートフォリオ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- Page Loader -->
     <div class="page-loader" id="js-loader">
-      <div class="page-loader__inner">TONDAM<span>A</span></div>
+        <div class="page-loader__inner">TONDAM<span>A</span></div>
     </div>
 
     <!-- Cursor -->
@@ -33,31 +32,29 @@
        SIDEBAR
   ======================================================== -->
     <aside class="sidebar" id="js-sidebar">
-      <div>
-        <a href="index.html" class="sidebar__logo"
-          >TONDAM<span>A</span><br /><span class="">P</span>ORTFOLIO</a
+        <div>
+            <a href="index.html" class="sidebar__logo">TONDAM<span>A</span><br /><span class="">P</span>ORTFOLIO</a
         >
 
         <nav class="sidebar__nav" aria-label="サイドナビ">
           <a href="#hero" class="sidebar__nav-item is-active" data-sec="hero">
             <span class="sidebar__nav-dot"></span>Home
           </a>
-          <a href="works.html" class="sidebar__nav-item" data-sec="works">
-            <span class="sidebar__nav-dot"></span>Works
-          </a>
-          <a href="about.html" class="sidebar__nav-item" data-sec="about">
-            <span class="sidebar__nav-dot"></span>About
-          </a>
-          <a href="#contact" class="sidebar__nav-item" data-sec="contact">
-            <span class="sidebar__nav-dot"></span>Contact
-          </a>
-        </nav>
-      </div>
+            <a href="works.html" class="sidebar__nav-item" data-sec="works">
+                <span class="sidebar__nav-dot"></span>Works
+            </a>
+            <a href="about.html" class="sidebar__nav-item" data-sec="about">
+                <span class="sidebar__nav-dot"></span>About
+            </a>
+            <a href="#contact" class="sidebar__nav-item" data-sec="contact">
+                <span class="sidebar__nav-dot"></span>Contact
+            </a>
+            </nav>
+        </div>
 
-      <div class="sidebar__bottom">
-        <div class="sidebar__socials">
-          <a href="#" class="sidebar__social" target="_blank" rel="noopener"
-            >Twitter</a
+        <div class="sidebar__bottom">
+            <div class="sidebar__socials">
+                <a href="#" class="sidebar__social" target="_blank" rel="noopener">Twitter</a
           >
           <a href="#" class="sidebar__social" target="_blank" rel="noopener"
             >Instagram</a
@@ -86,6 +83,8 @@
               transform: translate(0%, 2.5%);
             "
           >
+          <a class="btn" href="/about.html" data-has-event="true"
+                      >
             <div
               class="top-profile__card"
               id="js-top-card"
@@ -112,161 +111,135 @@
                     はじめまして<br />東京でWebディレクターとして勤務しています。<br />
                   </p>
                   <div class="link-btn">
-                    <a class="btn" href="/profile/" data-has-event="true"
-                      ><span class="txt-foward" role="presentation"
+                    <span class="txt-foward" role="presentation"
                         >View More</span
                       >
-                      <div class="arw">
-                        <svg viewBox="0 0 17 16">
-                          <use class="foward" href="#svg-arw-min"></use>
-                          <use class="back" href="#svg-arw-min"></use>
-                        </svg>
-                      </div>
                       <div class="line"></div
-                    ></a>
+                    >
                   </div>
                 </div>
               </div>
+            </div></a>
             </div>
-          </div>
         </div>
-      </section>
-      <!-- /.hero -->
+        </section>
+        <!-- /.hero -->
 
-      <!-- ========================================================
+        <!-- ========================================================
          Works Cards
     ======================================================== -->
-      <section class="section works">
-        <div class="works__header js-reveal">
-          <div>
-            <h2 class="works__title">WORKS</h2>
-          </div>
-          <a href="work.html" class="works__all">All Works →</a>
-        </div>
-        <div class="works__grid">
-          <article class="wc js-reveal js-wc">
-            <div class="wc__thumb">
-              <img src="image/maison.png" alt="インテリアショップ" />
-              <div class="wc__overlay">
-                <span class="wc__overlay-txt">View More</span>
-              </div>
+        <section class="section works">
+            <div class="works__header js-reveal">
+                <div>
+                    <h2 class="works__title">WORKS</h2>
+                </div>
+                <a href="/works.html" class="works__all">All Works →</a>
             </div>
-          </article>
-          <article class="wc js-reveal js-wc">
-            <div class="wc__thumb">
-              <img src="image/Noir-Blanc.png" alt="カフェ" />
-              <div class="wc__overlay">
-                <span class="wc__overlay-txt">View More</span>
-              </div>
+            <div class="works__grid">
+                <article class="wc js-reveal js-wc">
+                    <div class="wc__thumb">
+                        <img src="image/maison.png" alt="インテリアショップ" />
+                        <div class="wc__overlay">
+                            <span class="wc__overlay-txt">View More</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="wc js-reveal js-wc">
+                    <div class="wc__thumb">
+                        <img src="image/Noir-Blanc.png" alt="カフェ" />
+                        <div class="wc__overlay">
+                            <span class="wc__overlay-txt">View More</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="wc js-reveal js-wc">
+                    <div class="wc__thumb">
+                        <img src="image/animea.png" alt="動物医療専門学校" />
+                        <div class="wc__overlay">
+                            <span class="wc__overlay-txt">View More</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="wc js-reveal js-wc">
+                    <div class="wc__thumb">
+                        <img src="image/portfolio.png" alt="ポートフォリオサイト" />
+                        <div class="wc__overlay">
+                            <span class="wc__overlay-txt">View More</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="wc js-reveal js-wc">
+                    <div class="wc__thumb">
+                        <img src="image/maison.png" alt="インテリアショップ" />
+                        <div class="wc__overlay">
+                            <span class="wc__overlay-txt">View More</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="wc js-reveal js-wc">
+                    <div class="wc__thumb">
+                        <img src="image/portfolio.png" alt="ポートフォリオサイト" />
+                        <div class="wc__overlay">
+                            <span class="wc__overlay-txt">View More</span>
+                        </div>
+                    </div>
+                </article>
             </div>
-          </article>
-          <article class="wc js-reveal js-wc">
-            <div class="wc__thumb">
-              <img src="image/animea.png" alt="動物医療専門学校" />
-              <div class="wc__overlay">
-                <span class="wc__overlay-txt">View More</span>
-              </div>
-            </div>
-          </article>
-          <article class="wc js-reveal js-wc">
-            <div class="wc__thumb">
-              <img src="image/portfolio.png" alt="ポートフォリオサイト" />
-              <div class="wc__overlay">
-                <span class="wc__overlay-txt">View More</span>
-              </div>
-            </div>
-          </article>
-          <article class="wc js-reveal js-wc">
-            <div class="wc__thumb">
-              <img src="image/maison.png" alt="インテリアショップ" />
-              <div class="wc__overlay">
-                <span class="wc__overlay-txt">View More</span>
-              </div>
-            </div>
-          </article>
-          <article class="wc js-reveal js-wc">
-            <div class="wc__thumb">
-              <img src="image/portfolio.png" alt="ポートフォリオサイト" />
-              <div class="wc__overlay">
-                <span class="wc__overlay-txt">View More</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
+        </section>
 
-      <!-- ========================================================
+        <!-- ========================================================
          Contact
     ======================================================== -->
-      <section class="section contact" id="contact">
-        <div class="contact__inner">
-          <div class="js-reveal">
-            <h2 class="contact__heading">Contact</h2>
-            <p class="contact__text">
-              新規サイト制作・リニューアル・LP制作など、Web制作に関することなら何でもご相談ください。<br />まずはお気軽にメッセージをどうぞ。
-            </p>
-          </div>
-          <div class="js-reveal">
-            <form class="contact-form" id="js-form" novalidate>
-              <div class="fg">
-                <label for="c-name" class="fg__lbl">お名前</label>
-                <input
-                  type="text"
-                  id="c-name"
-                  name="name"
-                  class="fg__input"
-                  placeholder="山田 太郎"
-                  required
-                />
-              </div>
-              <div class="fg">
-                <label for="c-email" class="fg__lbl">メールアドレス</label>
-                <input
-                  type="email"
-                  id="c-email"
-                  name="email"
-                  class="fg__input"
-                  placeholder="hello@example.com"
-                  required
-                />
-              </div>
-              <div class="fg">
-                <label for="c-msg" class="fg__lbl">お問い合わせ内容</label>
-                <textarea
-                  id="c-msg"
-                  name="message"
-                  class="fg__textarea"
-                  placeholder="お気軽にご相談ください..."
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="cf__submit">送信する →</button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer__inner">
-          <div class="footer__top">
-            <div>
-              <div class="footer__logo">TONDAM<span>A</span></div>
+        <section class="section contact" id="contact">
+            <div class="contact__inner">
+                <div class="js-reveal">
+                    <h2 class="contact__heading">Contact</h2>
+                    <p class="contact__text">
+                        新規サイト制作・リニューアル・LP制作など、Web制作に関することなら何でもご相談ください。<br />まずはお気軽にメッセージをどうぞ。
+                    </p>
+                </div>
+                <div class="js-reveal">
+                    <form class="contact-form" id="js-form" novalidate>
+                        <div class="fg">
+                            <label for="c-name" class="fg__lbl">お名前</label>
+                            <input type="text" id="c-name" name="name" class="fg__input" placeholder="山田 太郎" required />
+                        </div>
+                        <div class="fg">
+                            <label for="c-email" class="fg__lbl">メールアドレス</label>
+                            <input type="email" id="c-email" name="email" class="fg__input" placeholder="hello@example.com" required />
+                        </div>
+                        <div class="fg">
+                            <label for="c-msg" class="fg__lbl">お問い合わせ内容</label>
+                            <textarea id="c-msg" name="message" class="fg__textarea" placeholder="お気軽にご相談ください..." required></textarea>
+                        </div>
+                        <button type="submit" class="cf__submit">送信する →</button>
+                    </form>
+                </div>
             </div>
-            <nav class="footer__nav">
-              <a href="index.html" class="footer__nav-lnk">Home</a>
-              <a href="work.html" class="footer__nav-lnk">Works</a>
-              <a href="about.html" class="footer__nav-lnk">About</a>
-              <a href="#contact" class="footer__nav-lnk">Contact</a>
-            </nav>
-          </div>
-          <div class="footer__bottom">
-            <p class="footer__copy">©2026 TONDAMA. All rights reserved.</p>
-          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="footer__top">
+                    <div>
+                        <div class="footer__logo">TONDAM<span>A</span></div>
+                    </div>
+                    <nav class="footer__nav">
+                        <a href="index.html" class="footer__nav-lnk">Home</a>
+                        <a href="work.html" class="footer__nav-lnk">Works</a>
+                        <a href="about.html" class="footer__nav-lnk">About</a>
+                        <a href="#contact" class="footer__nav-lnk">Contact</a>
+                    </nav>
+                </div>
+                <div class="footer__bottom">
+                    <p class="footer__copy">©2026 TONDAMA. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
         </div>
-      </footer>
-    </div>
-    <!-- /.main-wrap -->
-    <script src="main.js"></script>
-  </body>
+        <!-- /.main-wrap -->
+        <script src="main.js"></script>
+</body>
+
 </html>
