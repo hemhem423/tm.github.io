@@ -948,7 +948,7 @@
 
 .lb-info__num {
     font-family: var(--font-mono);
-    font-size: 1rem;
+    font-size: 1.5rem;
     letter-spacing: 0.2em;
     color: var(--color-mid-gray);
     margin-bottom: 2.4rem;
@@ -956,7 +956,7 @@
 
 .lb-info__cat {
     font-family: var(--font-mono);
-    font-size: 1rem;
+    font-size: 1.5rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-coral);
