@@ -270,7 +270,7 @@
 .skill-card {
     background: var(--color-soft-gray);
     border-radius: 20px;
-    padding: 3.2rem;
+    padding: 5rem 3rem;
     transition: transform var(--tr), box-shadow var(--tr);
     position: relative;
     overflow: hidden;
@@ -335,11 +335,11 @@
 
 .skill-card__tag {
     font-family: var(--font-mono);
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     letter-spacing: 0.08em;
-    background: rgba(0, 0, 0, 0.06);
-    color: #444;
-    padding: 0.3rem 1rem;
+    background: var(--color-coral);
+    color: var(--color-base);
+    padding: 1rem;
     border-radius: 100px;
 }
 
