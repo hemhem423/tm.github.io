@@ -1,7 +1,7 @@
       /* ============================================================
        CSS Custom Properties
     ============================================================ */
-      
+
        :root {
           --color-base: #fafafa;
           --color-ink: #111;
@@ -21,7 +21,7 @@
       /* ============================================================
        Reset & Base
     ============================================================ */
-      
+
       *,
       *::before,
       *::after {
@@ -29,13 +29,13 @@
           margin: 0;
           padding: 0;
       }
-      
+
       html {
           font-size: 62.5%;
           overflow: hidden;
           height: 100%;
       }
-      
+
       body {
           font-family: var(--font-body);
           font-size: 1.6rem;
@@ -46,24 +46,24 @@
           height: 100%;
           overflow: hidden;
       }
-      
+
       img {
           display: block;
           max-width: 100%;
       }
-      
+
       a {
           color: inherit;
           text-decoration: none;
       }
-      
+
       ul {
           list-style: none;
       }
       /* ============================================================
        Page Loader
     ============================================================ */
-      
+
       .page-loader {
           position: fixed;
           inset: 0;
@@ -74,7 +74,7 @@
           justify-content: center;
           pointer-events: none;
       }
-      
+
       .page-loader__inner {
           font-family: var(--font-display);
           font-size: clamp(2.4rem, 4vw, 4rem);
@@ -84,7 +84,7 @@
           transform: translateY(12px);
           animation: ldText 0.5s 0.1s forwards ease-out;
       }
-      
+
       .page-loader__dot {
           display: inline-block;
           width: 8px;
@@ -94,18 +94,18 @@
           margin-left: 3px;
           vertical-align: middle;
       }
-      
+
       @keyframes ldText {
           to {
               opacity: 1;
               transform: translateY(0);
           }
       }
-      
+
       .page-loader.is-hidden {
           animation: ldSlide 0.7s 0.2s forwards cubic-bezier(0.77, 0, 0.175, 1);
       }
-      
+
       @keyframes ldSlide {
           to {
               transform: translateY(-100%);
@@ -115,7 +115,7 @@
        SIDEBAR  (Fixed Left)
     ============================================================ */
       /* ---- デスクトップ: 通常表示 ---- */
-      
+
       .sidebar {
           position: fixed;
           left: 0;
@@ -137,12 +137,12 @@
           transition: opacity 0.8s ease, transform 0.8s ease;
       }
       /* デスクトップでのフェードイン完了 */
-      
+
       .sidebar.is-visible {
           opacity: 1;
           transform: translateX(0);
       }
-      
+
       .sidebar__logo {
           font-family: var(--font-display);
           font-size: 2rem;
@@ -152,18 +152,18 @@
           display: block;
           margin-bottom: 4rem;
       }
-      
+
       .sidebar__logo span {
           color: var(--color-coral);
       }
-      
+
       .sidebar__nav {
           flex: 1;
           display: flex;
           flex-direction: column;
           gap: 0.3rem;
       }
-      
+
       .sidebar__nav-item {
           display: flex;
           align-items: center;
@@ -178,13 +178,13 @@
           cursor: pointer;
           position: relative;
       }
-      
+
       .sidebar__nav-item:hover,
       .sidebar__nav-item.is-active {
           color: var(--color-ink);
           background: var(--color-soft-gray);
       }
-      
+
       .sidebar__nav-item.is-active::before {
           content: "";
           position: absolute;
@@ -195,7 +195,7 @@
           border-radius: 0 2px 2px 0;
           background: var(--color-coral);
       }
-      
+
       .sidebar__nav-dot {
           width: 6px;
           height: 6px;
@@ -205,12 +205,12 @@
           flex-shrink: 0;
           transition: opacity var(--tr);
       }
-      
+
       .sidebar__nav-item.is-active .sidebar__nav-dot,
       .sidebar__nav-item:hover .sidebar__nav-dot {
           opacity: 1;
       }
-      
+
       .sidebar__vert-label {
           writing-mode: vertical-rl;
           text-orientation: mixed;
@@ -222,18 +222,18 @@
           align-self: center;
           margin: 3rem 0;
       }
-      
+
       .sidebar__bottom {
           display: flex;
           flex-direction: column;
           gap: 1rem;
       }
-      
+
       .sidebar__socials {
           display: flex;
           gap: 0.7rem;
       }
-      
+
       .sidebar__social {
           font-size: 0.95rem;
           letter-spacing: 0.08em;
@@ -244,16 +244,16 @@
           align-items: center;
           gap: 6px;
       }
-      
+
       .sidebar__social:hover {
           color: var(--color-ink);
       }
-      
+
       .sidebar__social:hover::before {
           opacity: 1;
           transform: translateX(0);
       }
-      
+
       .sidebar__copy {
           font-size: 0.85rem;
           color: var(--color-mid-gray);
@@ -261,7 +261,7 @@
           margin-top: 0.4rem;
       }
       /* Mobile toggle */
-      
+
       .sidebar__toggle {
           display: none;
           position: fixed;
@@ -280,7 +280,7 @@
           justify-content: center;
           gap: 5px;
       }
-      
+
       .sidebar__toggle-line {
           width: 20px;
           height: 2px;
@@ -291,7 +291,7 @@
       /* ============================================================
        MAIN WRAPPER  (scrolls independently)
     ============================================================ */
-      
+
       .main-wrap {
           margin-left: var(--sidebar-w);
           width: calc(100% - var(--sidebar-w));
@@ -302,18 +302,18 @@
           opacity: 0;
           transition: opacity 0.8s 0.3s ease;
       }
-      
+
       .main-wrap.is-visible {
           opacity: 1;
       }
       /* ============================================================
        Section helpers
     ============================================================ */
-      
+
       .section {
           padding: 5rem;
       }
-      
+
       .section-label {
           font-size: 1.05rem;
           letter-spacing: 0.2em;
@@ -324,7 +324,7 @@
           gap: 10px;
           margin-bottom: 2.4rem;
       }
-      
+
       .section-label::before {
           content: "";
           display: inline-block;
@@ -335,11 +335,11 @@
       /* ============================================================
        Works Cards
     ============================================================ */
-      
+
       .works {
           background: var(--color-base);
       }
-      
+
       .works__header {
           display: flex;
           align-items: flex-end;
@@ -348,7 +348,7 @@
           flex-wrap: wrap;
           gap: 1.6rem;
       }
-      
+
       .works__title {
           font-family: var(--font-display);
           font-size: clamp(4rem, 6vw, 7.2rem);
@@ -356,7 +356,7 @@
           letter-spacing: -0.04em;
           line-height: 0.95;
       }
-      
+
       .works__title span {
           display: block;
           font-size: 0.4em;
@@ -366,7 +366,7 @@
           text-transform: uppercase;
           margin-bottom: 0.4em;
       }
-      
+
       .works__all {
           letter-spacing: 0.1em;
           text-transform: uppercase;
@@ -376,37 +376,36 @@
           flex-shrink: 0;
           font-weight: 700;
       }
-      
+
       .works__all:hover {
           color: var(--color-coral);
       }
-      
+
       .works__grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 2rem;
           align-items: start;
       }
-      
+
       .wc {
           border-radius: 16px;
           overflow: hidden;
-          cursor: pointer;
           transition: transform var(--tr-slow), box-shadow var(--tr-slow);
       }
-      
+
       .wc:hover {
           transform: translateY(-6px) rotate(-0.4deg);
           box-shadow: 0 24px 30px rgba(0, 0, 0, 0.12);
       }
-      
+
       .wc__thumb {
           position: relative;
           overflow: hidden;
           width: 100%;
           aspect-ratio: 16 / 11;
       }
-      
+
       .wc__thumb img {
           width: 100%;
           height: 100%;
@@ -414,11 +413,11 @@
           display: block;
           transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
-      
+
       .wc:hover .wc__thumb img {
           transform: scale(1.06);
       }
-      
+
       .wc__overlay {
           position: absolute;
           inset: 0;
@@ -429,11 +428,11 @@
           justify-content: center;
           transition: opacity var(--tr);
       }
-      
+
       .wc:hover .wc__overlay {
           opacity: 1;
       }
-      
+
       .wc__overlay-txt {
           font-family: var(--font-display);
           font-size: 1.5rem;
@@ -447,21 +446,21 @@
           transform: translateY(10px);
           transition: transform var(--tr);
       }
-      
+
       .wc:hover .wc__overlay-txt {
           transform: translateY(0);
       }
-      
+
       .wc__body {
           padding: 2rem 2.4rem 2.4rem;
       }
-      
+
       .wc__meta {
           display: flex;
           gap: 1rem;
           margin-bottom: 0.8rem;
       }
-      
+
       .wc__tag {
           letter-spacing: 0.12em;
           text-transform: uppercase;
@@ -470,7 +469,7 @@
           padding: 0.25rem 0.9rem;
           border-radius: 100px;
       }
-      
+
       .wc__title {
           font-family: var(--font-display);
           font-size: clamp(1.6rem, 2.2vw, 2.2rem);
@@ -479,7 +478,7 @@
           line-height: 1.2;
           margin-bottom: 0.7rem;
       }
-      
+
       .wc__desc {
           font-size: 1.4rem;
           color: #666;
@@ -489,7 +488,7 @@
    About — Profile Card Section
    ========================================================== */
       /* ステージ: ホバーで背景を少し暗く */
-      
+
       .top-profile {
           width: 100%;
           border-radius: 20px;
@@ -503,7 +502,7 @@
           transition: background 0.5s ease;
       }
       /* ── カード本体 ── */
-      
+
       .top-profile__card {
           background: #ffffff;
           border: 3px solid #111;
@@ -517,12 +516,12 @@
           will-change: transform;
           transition: transform 0.1s linear, box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
-      
+
       .top-profile__card:hover {
           box-shadow: 0 10px 10px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.08);
       }
       /* グレア (光沢) レイヤー ── JS で --gx/--gy を書き換える */
-      
+
       .top-profile__card::before {
           content: '';
           position: absolute;
@@ -534,47 +533,47 @@
           pointer-events: none;
           z-index: 3;
       }
-      
+
       .top-profile__card:hover::before {
           opacity: 1;
       }
       /* ── カード内横並び ── */
-      
+
       .top-profile__foward {
           display: flex;
           align-items: center;
           gap: clamp(24px, 4vw, 48px);
       }
       /* ── 左: アバター ── */
-      
+
       .top-profile__foward>figure {
           flex-shrink: 0;
           position: relative;
           width: clamp(100px, 16vw, 160px);
           height: clamp(100px, 16vw, 160px);
       }
-      
+
       .top-profile__foward>figure>img:first-of-type {
           transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.35s ease, box-shadow 0.45s ease;
       }
-      
+
       .top-profile__card:hover .top-profile__foward>figure>img:first-of-type {
           transform: scale(1.07);
       }
       /* View More ボタン: ホバーで coral ライン */
-      
+
       .link-btn .txt-foward::after {
           background: #111;
           transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.35s ease;
       }
-      
+
       .top-profile__card:hover .link-btn .txt-foward::after {
           background: var(--color-coral);
       }
       /* ----------------------------------------------------------
    左: アバター円
    ---------------------------------------------------------- */
-      
+
       .top-profile__foward>figure {
           flex-shrink: 0;
           position: relative;
@@ -582,7 +581,7 @@
           height: clamp(120px, 18vw, 180px);
       }
       /* メイン画像 */
-      
+
       .top-profile__foward>figure>img:first-of-type {
           width: 100%;
           height: 100%;
@@ -595,24 +594,24 @@
       /* ----------------------------------------------------------
    右: テキスト群
    ---------------------------------------------------------- */
-      
+
       .top-profile__txts {
           flex: 1;
           min-width: 0;
       }
-      
+
       .top-profile__hd {
           margin: 0 0 14px;
           line-height: 1;
       }
-      
+
       .top-profile__hd .svg-text {
           width: clamp(120px, 24vw, 220px);
           height: clamp(28px, 5vw, 50px);
           overflow: visible;
           display: block;
       }
-      
+
       .top-profile__hd .svg-text text {
           font-family: 'Syne', sans-serif;
           font-size: clamp(26px, 4vw, 30px);
@@ -624,7 +623,7 @@
           stroke-width: 1.5;
           dominant-baseline: hanging;
       }
-      
+
       .top-profile__hd-text {
           font-family: 'Syne', sans-serif;
           font-size: clamp(26px, 5vw, 46px);
@@ -635,7 +634,7 @@
           -webkit-text-stroke: 1.8px #111;
           display: block;
       }
-      
+
       .top-profile__name {
           display: flex;
           align-items: baseline;
@@ -644,7 +643,7 @@
           margin: 0 0 14px;
           line-height: 1.2;
       }
-      
+
       .top-profile__name .job {
           font-family: 'Space Mono', monospace;
           letter-spacing: 0.18em;
@@ -652,7 +651,7 @@
           color: #333;
           font-weight: 400;
       }
-      
+
       .top-profile__name .name {
           font-family: 'Syne', sans-serif;
           font-size: clamp(18px, 3.5vw, 30px);
@@ -660,17 +659,17 @@
           letter-spacing: -0.02em;
           color: var(--color-ink);
       }
-      
+
       .top-profile__name .name svg {
           height: clamp(22px, 3.5vw, 36px);
           width: auto;
           display: block;
       }
-      
+
       .top-profile__name .name svg use {
           fill: #111;
       }
-      
+
       .top-profile__desc {
           font-size: clamp(13px, 1.4vw, 15px);
           color: #333;
@@ -681,7 +680,7 @@
       /* ----------------------------------------------------------
    "View More" ボタン
    ---------------------------------------------------------- */
-      
+
       .link-btn .btn {
           display: inline-flex;
           align-items: center;
@@ -698,11 +697,11 @@
           position: relative;
       }
       /* テキスト下線アニメーション */
-      
+
       .link-btn .txt-foward {
           position: relative;
       }
-      
+
       .link-btn .txt-foward::after {
           content: '';
           position: absolute;
@@ -714,12 +713,12 @@
           transform-origin: left center;
           transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
-      
+
       .link-btn:hover .txt-foward::after {
           transform: scaleX(0);
           transform-origin: right center;
       }
-      
+
       .link-btn .btn .line {
           position: absolute;
           left: 0;
@@ -732,13 +731,13 @@
       /* ============================================================
        Contact
     ============================================================ */
-      
+
       .contact {
           background: var(--color-base);
           position: relative;
           overflow: hidden;
       }
-      
+
       .contact__bg {
           position: absolute;
           left: -2%;
@@ -751,13 +750,13 @@
           letter-spacing: -0.05em;
           pointer-events: none;
       }
-      
+
       .contact__inner {
           position: relative;
           z-index: 1;
           align-items: start;
       }
-      
+
       .contact__heading {
           font-family: var(--font-display);
           font-size: clamp(3.2rem, 4.5vw, 5.6rem);
@@ -766,25 +765,25 @@
           line-height: 1.05;
           margin-bottom: 2rem;
       }
-      
+
       .contact__heading em {
           font-style: normal;
           color: var(--color-coral);
       }
-      
+
       .contact__text {
           font-size: clamp(1.4rem, 1.5vw, 1.7rem);
           color: #666;
           line-height: 1.85;
           margin-bottom: 3.2rem;
       }
-      
+
       .contact__socials {
           display: flex;
           gap: 1.2rem;
           flex-wrap: wrap;
       }
-      
+
       .contact__soc {
           font-size: 1rem;
           letter-spacing: 0.1em;
@@ -794,17 +793,17 @@
           border-radius: 100px;
           transition: all var(--tr);
       }
-      
+
       .contact__soc:hover {
           border-color: var(--color-coral);
           color: var(--color-coral);
           transform: translateY(-2px);
       }
-      
+
       .fg {
           margin-bottom: 1.8rem;
       }
-      
+
       .fg__lbl {
           display: block;
           font-size: 2rem;
@@ -813,7 +812,7 @@
           color: #888;
           margin-bottom: 0.8rem;
       }
-      
+
       .fg__input,
       .fg__textarea {
           width: 100%;
@@ -828,24 +827,24 @@
           transition: all var(--tr);
           -webkit-appearance: none;
       }
-      
+
       .fg__input:focus,
       .fg__textarea:focus {
           border-color: var(--color-coral);
           background: #fff;
           box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.1);
       }
-      
+
       .fg__input::placeholder,
       .fg__textarea::placeholder {
           color: #bbb;
       }
-      
+
       .fg__textarea {
           height: 148px;
           resize: vertical;
       }
-      
+
       .cf__submit {
           width: 300px;
           display: block;
@@ -861,7 +860,7 @@
           cursor: pointer;
           transition: all var(--tr);
       }
-      
+
       .cf__submit:hover {
           transform: translateY(-3px);
           box-shadow: 0 16px 40px rgba(255, 107, 107, 0.36);
@@ -869,13 +868,13 @@
       /* ============================================================
        Footer
     ============================================================ */
-      
+
       .footer {
           background: var(--color-ink);
           color: #fff;
           padding: 5.6rem clamp(3.2rem, 5vw, 7.2rem) 3.6rem;
       }
-      
+
       .footer__top {
           display: flex;
           justify-content: space-between;
@@ -886,42 +885,42 @@
           margin-bottom: 2.8rem;
           flex-wrap: wrap;
       }
-      
+
       .footer__logo {
           font-family: var(--font-display);
           font-size: 2.8rem;
           font-weight: 800;
           letter-spacing: -0.03em;
       }
-      
+
       .footer__logo span {
           color: var(--color-coral);
       }
-      
+
       .footer__tagline {
           font-size: 1rem;
           letter-spacing: 0.1em;
           color: rgba(255, 255, 255, 0.38);
           margin-top: 0.6rem;
       }
-      
+
       .footer__nav {
           display: flex;
           gap: clamp(2rem, 4vw, 4.8rem);
           flex-wrap: wrap;
           line-height: 4.5rem;
       }
-      
+
       .footer__nav-lnk {
           letter-spacing: 0.12em;
           text-transform: uppercase;
           transition: color var(--tr);
       }
-      
+
       .footer__nav-lnk:hover {
           color: var(--color-turquoise);
       }
-      
+
       .footer__bottom {
           display: flex;
           justify-content: space-between;
@@ -929,16 +928,16 @@
           flex-wrap: wrap;
           gap: 1.2rem;
       }
-      
+
       .footer__copy {
           color: rgba(255, 255, 255, 0.28);
       }
-      
+
       .footer__socs {
           display: flex;
           gap: 1.2rem;
       }
-      
+
       .footer__soc {
           width: 38px;
           height: 38px;
@@ -951,7 +950,7 @@
           color: rgba(255, 255, 255, 0.38);
           transition: all var(--tr);
       }
-      
+
       .footer__soc:hover {
           border-color: var(--color-coral);
           color: var(--color-coral);
@@ -960,13 +959,13 @@
       /* ============================================================
        Scroll Reveal
     ============================================================ */
-      
+
       .js-reveal {
           opacity: 0;
           transform: translateY(36px);
           transition: opacity 0.8s ease, transform 0.8s ease;
       }
-      
+
       .js-reveal.is-visible {
           opacity: 1;
           transform: translateY(0);
@@ -974,7 +973,7 @@
       /* ============================================================
        Cursor
     ============================================================ */
-      
+
       .c-dot {
           position: fixed;
           width: 10px;
@@ -986,7 +985,7 @@
           transform: translate(-50%, -50%);
           mix-blend-mode: multiply;
       }
-      
+
       .c-ring {
           position: fixed;
           width: 44px;
@@ -998,7 +997,7 @@
           transform: translate(-50%, -50%);
           transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
       }
-      
+
       .c-ring.is-hovered {
           width: 68px;
           height: 68px;
@@ -1007,7 +1006,7 @@
       /* ============================================================
        Responsive
     ============================================================ */
-      
+
       @media (max-width: 1100px) {
            :root {
               --sidebar-w: 0px;
@@ -1050,7 +1049,7 @@
           }
       }
       /* ---- 768px 以下 ---- */
-      
+
       @media (max-width: 768px) {
           .hero {
               grid-template-columns: repeat(2, 1fr);
@@ -1111,7 +1110,7 @@
               text-align: center;
           }
       }
-      
+
       @media (max-width: 640px) {
           .top-profile__foward {
               flex-direction: column;
