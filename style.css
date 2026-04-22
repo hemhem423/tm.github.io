@@ -123,10 +123,10 @@
           bottom: 0;
           width: var(--sidebar-w);
           background: var(--color-base);
-          border: 1px solid var(--color-border);
+          border: 2px solid var(--color-border);
           border-radius: 3rem;
-          margin: 3px 3px -25px;
-          box-shadow: 3px 3px 10px var(--color-mid-gray);
+          margin: 2px 5px 5px;
+          box-shadow: 5px 5px 10px var(--color-mid-gray);
           display: flex;
           flex-direction: column;
           justify-content: space-between;
