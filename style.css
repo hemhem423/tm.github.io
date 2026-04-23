@@ -1147,7 +1147,7 @@
       .footer {
           background: var(--color-ink);
           color: #fff;
-          padding: 5.6rem clamp(3.2rem, 5vw, 7.2rem) 3.6rem;
+          padding: 3rem clamp(3.2rem, 5vw, 7.2rem);
       }
 
       .footer__top {
