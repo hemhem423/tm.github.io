@@ -83,13 +83,13 @@
           <a href="#hero" class="sidebar__nav-item is-active" data-sec="hero">
             <span class="sidebar__nav-dot"></span>Home
           </a>
-          <a href="works.html" class="sidebar__nav-item" data-sec="works">
+          <a href="/works" class="sidebar__nav-item" data-sec="works">
             <span class="sidebar__nav-dot"></span>Works
           </a>
-          <a href="about.html" class="sidebar__nav-item" data-sec="about">
+          <a href="/about" class="sidebar__nav-item" data-sec="about">
             <span class="sidebar__nav-dot"></span>About
           </a>
-          <a href="#contact" class="sidebar__nav-item" data-sec="contact">
+          <a href="/contact" class="sidebar__nav-item" data-sec="contact">
             <span class="sidebar__nav-dot"></span>Contact
           </a>
         </nav>
@@ -147,12 +147,10 @@
                       <svg class="svg-text"><text>profile</text></svg>
                     </h2>
                     <h3 class="top-profile__name">
-                      <span class="job">Web Director</span
+                      <span class="job">Web Creator</span
                       ><span class="name">Masahiro Toda</span>
                     </h3>
-                    <p class="top-profile__desc">
-                      はじめまして<br />東京でWebディレクターとして勤務しています。<br />
-                    </p>
+
                     <div class="link-btn">
                       <span class="txt-foward" role="presentation"
                         >View More</span
@@ -220,72 +218,40 @@
           </article>
         </div>
       </section>
-
       <!-- ========================================================
-         Contact
-    ======================================================== -->
-      <section class="section contact" id="contact">
-        <div class="contact__inner">
-          <div class="js-reveal">
-            <h2 class="contact__heading">Contact</h2>
-            <p class="contact__text">
-              新規サイト制作・リニューアル・LP制作など、Web制作に関することなら何でもご相談ください。<br />まずはお気軽にメッセージをどうぞ。
-            </p>
-          </div>
-          <div class="js-reveal">
-            <form class="contact-form" id="js-form" novalidate>
-              <div class="fg">
-                <label for="c-name" class="fg__lbl">お名前</label>
-                <input
-                  type="text"
-                  id="c-name"
-                  name="name"
-                  class="fg__input"
-                  placeholder="山田 太郎"
-                  required
-                />
+     News / お知らせ
+======================================================== -->
+      <section class="section news" id="news">
+        <div class="news__header js-reveal">
+          <h2 class="news__title">NEWS</h2>
+        </div>
+        <div class="news__inner">
+          <ul class="news__list">
+            <li class="news__item js-reveal">
+              <button class="news__btn" aria-expanded="false">
+                <span class="news__meta">
+                  <time class="news__date" datetime="2026-04-10"
+                    >2026.04.10</time
+                  >
+                </span>
+                <span class="news__subject"
+                  >ポートフォリオサイトをオープンしました</span
+                >
+                <span class="news__icon" aria-hidden="true"></span>
+              </button>
+              <div class="news__body" hidden>
+                <p>
+                  活動の幅を広げるため、ポートフォリオサイトを制作いたしました。
+                  <br />よろしくお願いいたします。
+                </p>
               </div>
-              <div class="fg">
-                <label for="c-email" class="fg__lbl">メールアドレス</label>
-                <input
-                  type="email"
-                  id="c-email"
-                  name="email"
-                  class="fg__input"
-                  placeholder="hello@example.com"
-                  required
-                />
-              </div>
-              <div class="fg">
-                <label for="c-msg" class="fg__lbl">お問い合わせ内容</label>
-                <textarea
-                  id="c-msg"
-                  name="message"
-                  class="fg__textarea"
-                  placeholder="お気軽にご相談ください..."
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="cf__submit">送信する →</button>
-            </form>
-          </div>
+            </li>
+          </ul>
         </div>
       </section>
-
       <!-- Footer -->
       <footer class="footer">
         <div class="footer__inner">
-          <div class="footer__top">
-            <div>
-              <div class="footer__logo">TONDAM<span>A</span></div>
-            </div>
-            <nav class="footer__nav">
-              <a href="index.html" class="footer__nav-lnk">Home</a>
-              <a href="work.html" class="footer__nav-lnk">Works</a>
-              <a href="about.html" class="footer__nav-lnk">About</a>
-              <a href="#contact" class="footer__nav-lnk">Contact</a>
-            </nav>
-          </div>
           <div class="footer__bottom">
             <p class="footer__copy">©2026 TONDAMA. All rights reserved.</p>
           </div>

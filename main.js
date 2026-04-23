@@ -26,27 +26,7 @@
           sidebar.classList.remove("is-mobile-open"),
         );
 
-        /* ---- Active nav via IntersectionObserver on main scroll ---- */
-        const secEls = main.querySelectorAll("[id]");
-        const navLnks = document.querySelectorAll(
-          ".sidebar__nav-item[data-sec]",
-        );
-        const io = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                navLnks.forEach((n) =>
-                  n.classList.toggle(
-                    "is-active",
-                    n.dataset.sec === e.target.id,
-                  ),
-                );
-              }
-            });
-          },
-          { root: main, threshold: 0.35 },
-        );
-        secEls.forEach((s) => io.observe(s));
+        
 
         /* ---- Scroll Reveal ---- */
         const reveals = main.querySelectorAll(".js-reveal");
@@ -361,7 +341,45 @@
   }
  
 
- 
+ /* ============================================================
+   NEWS アコーディオン
+============================================================ */
+document.querySelectorAll('.news__btn').forEach((btn) => {
+  const body = btn.nextElementSibling;
+
+  btn.addEventListener('click', () => {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    if (isOpen) {
+      // --- 閉じる ---
+      // ★ インラインの height:auto を先にクリアしてからアニメーション開始
+      body.style.height = '';
+      body.style.setProperty('--body-h', body.scrollHeight + 'px');
+      body.classList.remove('is-open');
+      body.classList.add('is-closing');
+      btn.setAttribute('aria-expanded', 'false');
+
+      body.addEventListener('animationend', () => {
+        body.classList.remove('is-closing');
+        body.style.removeProperty('--body-h');
+        body.setAttribute('hidden', '');
+      }, { once: true });
+
+    } else {
+      // --- 開く ---
+      body.removeAttribute('hidden');
+      const h = body.scrollHeight;
+      body.style.setProperty('--body-h', h + 'px');
+      body.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+
+      body.addEventListener('animationend', () => {
+        body.classList.remove('is-open');
+        body.style.height = 'auto';
+      }, { once: true });
+    }
+  });
+});
   /* ----------------------------------------------------------
      エントリーポイント
   ---------------------------------------------------------- */

@@ -257,4 +257,42 @@
           { passive: true },
         );
       })();
-      
+      /* ============================================================
+   NEWS アコーディオン
+============================================================ */
+document.querySelectorAll('.news__btn').forEach((btn) => {
+  const body = btn.nextElementSibling;
+
+  btn.addEventListener('click', () => {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    if (isOpen) {
+      // --- 閉じる ---
+      // ★ インラインの height:auto を先にクリアしてからアニメーション開始
+      body.style.height = '';
+      body.style.setProperty('--body-h', body.scrollHeight + 'px');
+      body.classList.remove('is-open');
+      body.classList.add('is-closing');
+      btn.setAttribute('aria-expanded', 'false');
+
+      body.addEventListener('animationend', () => {
+        body.classList.remove('is-closing');
+        body.style.removeProperty('--body-h');
+        body.setAttribute('hidden', '');
+      }, { once: true });
+
+    } else {
+      // --- 開く ---
+      body.removeAttribute('hidden');
+      const h = body.scrollHeight;
+      body.style.setProperty('--body-h', h + 'px');
+      body.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+
+      body.addEventListener('animationend', () => {
+        body.classList.remove('is-open');
+        body.style.height = 'auto';
+      }, { once: true });
+    }
+  });
+});

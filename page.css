@@ -1,17 +1,15 @@
+
+
 /* ============================================================
-         About Page — Page-specific styles
-      ============================================================ */
-
-
-/* ---- Hero ---- */
-
-.about-hero {
+        ---- Hero ---- 
+============================================================ */
+.about-hero,.works-hero,.contact-hero {
     padding: 12rem 5rem 6rem;
     position: relative;
     overflow: hidden;
 }
 
-.about-hero__bg-txt {
+.about-hero__bg-txt,.works-hero__bg-txt,.contact-hero__bg-txt {
     position: absolute;
     right: -2%;
     top: 50%;
@@ -25,7 +23,7 @@
     white-space: nowrap;
 }
 
-.about-hero__label {
+.about-hero__label,.works-hero__label,.contact-hero__label {
     font-family: var(--font-mono);
     font-size: 1.1rem;
     letter-spacing: 0.2em;
@@ -37,7 +35,7 @@
     margin-bottom: 2.4rem;
 }
 
-.about-hero__label::before {
+.about-hero__label::before, .works-hero__label::before, .contact-hero__label::before {
     content: "";
     display: inline-block;
     width: 24px;
@@ -45,7 +43,7 @@
     background: var(--color-coral);
 }
 
-.about-hero__title {
+.about-hero__title,.works-hero__title,.contact-hero__title {
     font-family: var(--font-display);
     font-size: clamp(5rem, 9vw, 11rem);
     font-weight: 800;
@@ -56,11 +54,11 @@
     z-index: 1;
 }
 
-.about-hero__title span {
+.about-hero__title span,.works-hero__title span,.contact-hero__title span {
     color: var(--color-coral);
 }
 
-.about-hero__sub {
+.about-hero__sub,.works-hero__sub,.contact-hero__sub {
     font-size: clamp(1.5rem, 1.8vw, 1.9rem);
     color: #555;
     line-height: 1.85;
@@ -68,6 +66,12 @@
     position: relative;
     z-index: 1;
 }
+
+
+
+/* ============================================================
+         About Page — Page-specific styles
+      ============================================================ */
 
 
 /* ---- Profile Block ---- */
@@ -589,76 +593,6 @@
       ============================================================ */
 
 
-/* ---- Hero ---- */
-
-.works-hero {
-    padding: 12rem 5rem 5rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.works-hero__bg-txt {
-    position: absolute;
-    right: -2%;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: var(--font-display);
-    font-size: clamp(10rem, 22vw, 28rem);
-    font-weight: 800;
-    color: rgba(0, 0, 0, 0.04);
-    letter-spacing: -0.05em;
-    pointer-events: none;
-    white-space: nowrap;
-}
-
-.works-hero__label {
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-coral);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 2rem;
-}
-
-.works-hero__label::before {
-    content: "";
-    display: inline-block;
-    width: 24px;
-    height: 2px;
-    background: var(--color-coral);
-}
-
-.works-hero__title {
-    font-family: var(--font-display);
-    font-size: clamp(5rem, 10vw, 12rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 0.92;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 3.2rem;
-}
-
-.works-hero__count {
-    font-family: var(--font-mono);
-    font-size: 1.2rem;
-    color: var(--color-mid-gray);
-    letter-spacing: 0.12em;
-    position: relative;
-    z-index: 1;
-}
-
-.works-hero__count strong {
-    color: var(--color-coral);
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-}
-
 
 /* ---- Filter bar ---- */
 
@@ -842,6 +776,16 @@
     line-height: 1.2;
 }
 
+/* ============================================================
+         Contact Page
+      ============================================================ */
+
+.faq-btn{
+    grid-template-columns: 1fr auto;
+}
+.faq__body p{
+    padding-left:0;
+}
 
 /* ---- Lightbox ---- */
 

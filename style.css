@@ -496,7 +496,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 5rem 1rem;
+          padding: 5rem;
           position: relative;
           min-height: 380px;
           transition: background 0.5s ease;
@@ -640,7 +640,7 @@
           align-items: baseline;
           gap: 12px;
           flex-wrap: wrap;
-          margin: 0 0 14px;
+          margin: 0 0 5rem;
           line-height: 1.2;
       }
 
@@ -729,11 +729,237 @@
           display: none;
       }
       /* ============================================================
+   NEWS / お知らせ
+============================================================ */
+.news {
+  background: var(--color-base);
+}
+
+.news__inner {
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+/* ---- ヘッダー: worksと同じスタイルに統一 ---- */
+.news__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+}
+
+.news__title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 6vw, 7.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+/* ---- リスト ---- */
+.news__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news__item {
+  border-top: 1px solid var(--color-border);
+}
+
+.news__item:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ---- ボタン（タイトル行）---- */
+.news__btn {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding-block: 2rem;
+  background: none;
+  border: none;
+  color: var(--color-ink);
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--tr);
+}
+
+.news__btn:hover {
+  background: var(--color-soft-gray);
+  border-radius: 10px;
+}
+
+/* ---- メタ（日付＋タグ）---- */
+.news__meta {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-shrink: 0;
+}
+
+.news__date {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  color: var(--color-mid-gray);
+  white-space: nowrap;
+}
+
+.news__tag {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  border: 1.5px solid var(--color-border);
+  padding: 0.2em 0.8em;
+  border-radius: 100px;
+  color: var(--color-mid-gray);
+  white-space: nowrap;
+  transition: border-color var(--tr), color var(--tr);
+}
+
+.news__btn:hover .news__tag {
+  border-color: var(--color-coral);
+  color: var(--color-coral);
+}
+
+/* ---- タイトル文字 ---- */
+.news__subject {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-ink);
+}
+
+/* ---- 開閉アイコン（＋ / −）---- */
+.news__icon {
+  flex-shrink: 0;
+  position: relative;
+  width: 18px;
+  height: 18px;
+      margin: 5px;
+}
+
+.news__icon::before,
+.news__icon::after {
+  content: '';
+  position: absolute;
+  background: var(--color-ink);
+  border-radius: 1px;
+  transition: transform var(--tr), opacity var(--tr);
+}
+
+.news__icon::before {   /* 横線 */
+  width: 18px;
+  height: 1.5px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.news__icon::after {    /* 縦線 */
+  width: 1.5px;
+  height: 18px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+/* 展開時：縦線を非表示 → ＋ → − */
+.news__btn[aria-expanded="true"] .news__icon::after {
+  transform: translateX(-50%) scaleY(0);
+  opacity: 0;
+}
+
+.news__btn[aria-expanded="true"] .news__icon::before {
+  background: var(--color-coral);
+}
+
+/* ---- 本文エリア ---- */
+.news__body {
+  overflow: hidden;
+}
+
+.news__body[hidden] {
+  display: block !important;
+  height: 0;
+  visibility: hidden;
+}
+
+.news__body p {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  line-height: 1.9;
+  color: #555;
+  padding: 0.4rem 0 2.4rem;
+  /* メタ列幅分インデント: date+tag+gap ≒ 160px */
+  padding-left: calc(8rem + 2rem);
+  margin-left: 0;
+}
+
+/* ---- アニメーション ---- */
+.news__body.is-open {
+  visibility: visible;
+  animation: newsOpen 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.news__body.is-closing {
+  visibility: visible;
+  animation: newsClose 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes newsOpen {
+  from { height: 0; opacity: 0; }
+  to   { height: var(--body-h); opacity: 1; }
+}
+
+@keyframes newsClose {
+  from { height: var(--body-h); opacity: 1; }
+  to   { height: 0; opacity: 0; }
+}
+
+/* ---- モバイル対応 ---- */
+@media (max-width: 768px) {
+  .news__btn {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 0.8rem 1.2rem;
+  }
+
+  .news__meta {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .news__subject {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 1.4rem;
+
+  }
+
+  .news__icon {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+
+  }
+
+  .news__body p {
+    padding-left: 1.6rem;
+  }
+}
+      /* ============================================================
        Contact
     ============================================================ */
 
       .contact {
-          background: var(--color-base);
           position: relative;
           overflow: hidden;
       }
@@ -773,7 +999,6 @@
 
       .contact__text {
           font-size: clamp(1.4rem, 1.5vw, 1.7rem);
-          color: #666;
           line-height: 1.85;
           margin-bottom: 3.2rem;
       }
@@ -865,6 +1090,56 @@
           transform: translateY(-3px);
           box-shadow: 0 16px 40px rgba(255, 107, 107, 0.36);
       }
+      .text-center {
+    text-align: center;
+}
+      .link-ml {
+    position: relative;
+    display: inline-block;
+    padding: 4rem 8rem;
+    margin: 20px auto;
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.8 !important;
+    letter-spacing: 0;
+    text-align: center;
+    background-color: transparent;
+    overflow-wrap: break-word;
+    z-index: 2;
+}
+.link-ml:before, .link-ml:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 70px;
+    border: 15px var(--color-coral) solid;
+    border-right: 0;
+    border-bottom: 0;
+    z-index: 1;
+}
+.link-ml:after {
+    top: auto;
+    right: 0;
+    left: auto;
+    bottom: 0;
+    border: 15px var(--color-coral) solid;
+    border-left: 0;
+    border-top: 0;
+}
+.link-ml a {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    -webkit-transition: margin-bottom 0.2s, padding-bottom 0.2s;
+    transition: margin-bottom 0.2s, padding-bottom 0.2s;
+    text-decoration: none !important;
+    padding-bottom: 0.2rem;
+    margin-bottom: 0;
+    border-bottom: 4px var(--color-text) solid;
+}
       /* ============================================================
        Footer
     ============================================================ */
@@ -876,7 +1151,6 @@
       }
 
       .footer__top {
-          display: flex;
           justify-content: space-between;
           align-items: flex-start;
           gap: 3.2rem;

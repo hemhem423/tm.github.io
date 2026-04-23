@@ -3,15 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TONDAMA | About</title>
+    <title>TONDAMA|WEBディレクターのポートフォリオサイト</title>
+    <meta
+      name="description"
+      content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。"
+    />
+    <meta name="author" content="Masahiro Toda" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tondama.com/" />
+
+    <!-- ===== OGP (SNSシェア用) ===== -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="TONDAMA|WEBディレクターのポートフォリオサイト"
+    />
+    <meta
+      property="og:description"
+      content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。"
+    />
+    <meta property="og:url" content="https://tondama.com/" />
+    <meta property="og:image" content="https://tondama.com/image/ogp.jpg" />
+    <meta property="og:site_name" content="TONDAMA PORTFOLIO" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="TONDAMA|WEBディレクターのポートフォリオサイト"
+    />
+    <meta
+      name="twitter:description"
+      content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。"
+    />
+    <meta name="twitter:image" content="https://tondama.com/image/ogp.jpg" />
+
+    <!-- ===== ファビコン ===== -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="page.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/page.css" />
   </head>
 
   <body>
@@ -31,28 +71,31 @@
       <span class="sidebar__toggle-line"></span>
     </button>
 
-    <!-- SIDEBAR -->
+    <!-- ========================================================
+       SIDEBAR
+  ======================================================== -->
     <aside class="sidebar" id="js-sidebar">
       <div>
         <a href="index.html" class="sidebar__logo"
-          >TONDAM<span>A</span><br /><span>P</span>ORTFOLIO</a
+          >TONDAM<span>A</span><br /><span class="">P</span>ORTFOLIO</a
         >
+
         <nav class="sidebar__nav" aria-label="サイドナビ">
-          <a href="index.html" class="sidebar__nav-item" data-sec="hero">
+          <a href="/" class="sidebar__nav-item " data-sec="hero">
             <span class="sidebar__nav-dot"></span>Home
           </a>
-          <a href="works.html" class="sidebar__nav-item">
+          <a href="/works" class="sidebar__nav-item" data-sec="works">
             <span class="sidebar__nav-dot"></span>Works
           </a>
-          <a href="about.html" class="sidebar__nav-item is-active">
+          <a href="/about" class="sidebar__nav-item is-active" data-sec="about">
             <span class="sidebar__nav-dot"></span>About
           </a>
-          <a href="index.html#contact" class="sidebar__nav-item">
+          <a href="/contact" class="sidebar__nav-item" data-sec="contact">
             <span class="sidebar__nav-dot"></span>Contact
           </a>
         </nav>
       </div>
-      <div class="sidebar__bottom">
+      <!--<div class="sidebar__bottom">
         <div class="sidebar__socials">
           <a href="#" class="sidebar__social" target="_blank" rel="noopener"
             >Twitter</a
@@ -61,7 +104,7 @@
             >Instagram</a
           >
         </div>
-      </div>
+      </div>-->
     </aside>
 
     <!-- MAIN WRAPPER -->
@@ -98,7 +141,7 @@
             >
               <div class="top-profile__foward">
                 <figure>
-                  <img src="image/icon.png" alt="" decoding="async" />
+                  <img src="/image/icon.png" alt="" decoding="async" />
                 </figure>
                 <div class="top-profile__txts">
                   <h2 class="top-profile__hd">
@@ -109,7 +152,7 @@
                     ><span class="name">Masahiro Toda</span>
                   </h3>
                   <p class="top-profile__desc">
-                    はじめまして。<br>東京でWebディレクターとして活動しています。<br>Webサイトの設計からディレクション、コーディングまで
+                    はじめまして。<br>東京でWebクリエイターとして活動しています。<br>Webサイトの設計からディレクション、コーディングまで
             幅広く対応しています。ユーザーにとって使いやすく、クライアントのビジネスに貢献できるサイト制作を目指しています。
                   <br>サイト名のTONDAMAは学生時代のあだ名「とんだま」が由来です。</p>
 
@@ -211,17 +254,7 @@
       <!-- Footer -->
       <footer class="footer">
         <div class="footer__inner">
-          <div class="footer__top">
-            <div>
-              <div class="footer__logo">TONDAM<span>A</span></div>
-            </div>
-            <nav class="footer__nav">
-              <a href="index.html" class="footer__nav-lnk">Home</a>
-              <a href="works.html" class="footer__nav-lnk">Works</a>
-              <a href="about.html" class="footer__nav-lnk">About</a>
-              <a href="index.html#contact" class="footer__nav-lnk">Contact</a>
-            </nav>
-          </div>
+          
           <div class="footer__bottom">
             <p class="footer__copy">©2026 TONDAMA. All rights reserved.</p>
           </div>
@@ -229,7 +262,6 @@
       </footer>
     </div>
     <!-- /.main-wrap -->
-
-    <script src="page.js"></script>
+    <script src="/page.js"></script>
   </body>
 </html>
