@@ -558,6 +558,9 @@
     .section {
         padding: 2rem;
     }
+    .section.about {
+        padding: 0;
+    }
     .profile-block {
         grid-template-columns: 1fr;
         gap: 3.2rem;

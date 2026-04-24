@@ -607,14 +607,14 @@
 
       .top-profile__hd .svg-text {
           width: clamp(120px, 24vw, 220px);
-          height: clamp(28px, 5vw, 50px);
+          height: clamp(24px, 5vw, 50px);
           overflow: visible;
           display: block;
       }
 
       .top-profile__hd .svg-text text {
           font-family: 'Syne', sans-serif;
-          font-size: clamp(26px, 4vw, 30px);
+          font-size: clamp(24px, 4vw, 30px);
           font-weight: 800;
           letter-spacing: 0.06em;
           text-transform: uppercase;
@@ -1098,7 +1098,7 @@
     display: inline-block;
     padding: 4rem 8rem;
     margin: 20px auto;
-    font-size: 4rem;
+    font-size: clamp(2.4rem, 4vw, 4rem);
     font-weight: 500;
     line-height: 1.8 !important;
     letter-spacing: 0;
@@ -1377,15 +1377,16 @@
               width: 120px;
               height: 120px;
           }
-          .top-profile__hd .svg-text {
-              margin-inline: auto;
-          }
+
           .link-btn {
               text-align: center;
           }
       }
 
       @media (max-width: 640px) {
+        .top-profile{
+    padding: 3rem;
+        }
           .top-profile__foward {
               flex-direction: column;
           }
@@ -1393,10 +1394,16 @@
               width: 120px;
               height: 120px;
           }
-          .top-profile__hd .svg-text {
-              margin-inline: auto;
-          }
           .link-btn {
               text-align: center;
           }
+                .link-ml {
+    padding: 4rem;
+
+}
+.link-ml:before, .link-ml:after {
+    width: 100px;
+    height: 50px;
+
+}
       }
