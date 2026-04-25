@@ -1,27 +1,37 @@
 <!doctype html>
 <html lang="ja">
-  <head>
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TCFBX8WD');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TONDAMA|WEBディレクターのポートフォリオサイト</title>
-    <meta
-      name="description"
-      content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。"
-    />
+    <meta name="description" content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。" />
     <meta name="author" content="Masahiro Toda" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://tondama.com/" />
 
     <!-- ===== OGP (SNSシェア用) ===== -->
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="TONDAMA|WEBディレクターのポートフォリオサイト"
-    />
-    <meta
-      property="og:description"
-      content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。"
-    />
+    <meta property="og:title" content="TONDAMA|WEBディレクターのポートフォリオサイト" />
+    <meta property="og:description" content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。" />
     <meta property="og:url" content="https://tondama.com/" />
     <meta property="og:image" content="https://tondama.com/image/ogp.jpg" />
     <meta property="og:site_name" content="TONDAMA PORTFOLIO" />
@@ -29,14 +39,8 @@
 
     <!-- ===== Twitter Card ===== -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="TONDAMA|WEBディレクターのポートフォリオサイト"
-    />
-    <meta
-      name="twitter:description"
-      content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。"
-    />
+    <meta name="twitter:title" content="TONDAMA|WEBディレクターのポートフォリオサイト" />
+    <meta name="twitter:description" content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。" />
     <meta name="twitter:image" content="https://tondama.com/image/ogp.jpg" />
 
     <!-- ===== ファビコン ===== -->
@@ -46,18 +50,19 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/page.css" />
-  </head>
+</head>
 
-  <body>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCFBX8WD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Page Loader -->
     <div class="page-loader" id="js-loader">
-      <div class="page-loader__inner">TONDAM<span>A</span></div>
+        <div class="page-loader__inner">TONDAM<span>A</span></div>
     </div>
 
     <!-- Cursor -->
@@ -75,27 +80,26 @@
        SIDEBAR
   ======================================================== -->
     <aside class="sidebar" id="js-sidebar">
-      <div>
-        <a href="/" class="sidebar__logo"
-          >TONDAM<span>A</span><br /><span class="">P</span>ORTFOLIO</a
+        <div>
+            <a href="/" class="sidebar__logo">TONDAM<span>A</span><br /><span class="">P</span>ORTFOLIO</a
         >
 
         <nav class="sidebar__nav" aria-label="サイドナビ">
           <a href="/" class="sidebar__nav-item " data-sec="hero">
             <span class="sidebar__nav-dot"></span>Home
           </a>
-          <a href="/works" class="sidebar__nav-item" data-sec="works">
-            <span class="sidebar__nav-dot"></span>Works
-          </a>
-          <a href="/about" class="sidebar__nav-item is-active" data-sec="about">
-            <span class="sidebar__nav-dot"></span>About
-          </a>
-          <a href="/contact" class="sidebar__nav-item" data-sec="contact">
-            <span class="sidebar__nav-dot"></span>Contact
-          </a>
-        </nav>
-      </div>
-      <!--<div class="sidebar__bottom">
+            <a href="/works" class="sidebar__nav-item" data-sec="works">
+                <span class="sidebar__nav-dot"></span>Works
+            </a>
+            <a href="/about" class="sidebar__nav-item is-active" data-sec="about">
+                <span class="sidebar__nav-dot"></span>About
+            </a>
+            <a href="/contact" class="sidebar__nav-item" data-sec="contact">
+                <span class="sidebar__nav-dot"></span>Contact
+            </a>
+            </nav>
+        </div>
+        <!--<div class="sidebar__bottom">
         <div class="sidebar__socials">
           <a href="#" class="sidebar__social" target="_blank" rel="noopener"
             >Twitter</a
@@ -109,63 +113,54 @@
 
     <!-- MAIN WRAPPER -->
     <div class="main-wrap" id="js-main">
-      <!-- Hero -->
-      <section class="about-hero">
-        <div class="about-hero__bg-txt" aria-hidden="true">ABOUT</div>
-        <h1 class="about-hero__title js-reveal">About</h1>
-      </section>
-      <!-- Profile Block -->
-      <section class="section about">
-        <div class="about__inner">
-          <div
-            class="top-profile"
-            id="js-top-profile"
-            style="
+        <!-- Hero -->
+        <section class="about-hero">
+            <div class="about-hero__bg-txt" aria-hidden="true">ABOUT</div>
+            <h1 class="about-hero__title js-reveal">About</h1>
+        </section>
+        <!-- Profile Block -->
+        <section class="section about">
+            <div class="about__inner">
+                <div class="top-profile" id="js-top-profile" style="
               translate: none;
               rotate: none;
               scale: none;
               clip-path: inset(0px 0% round 20px);
               transform: translate(0%, 2.5%);
-            "
-          >
+            ">
 
-            <div
-              class="top-profile__card"
-              id="js-top-card"
-              style="
+                    <div class="top-profile__card" id="js-top-card" style="
                 translate: none;
                 rotate: none;
                 scale: none;
                 transform: translate(0%, 3.0806%) rotate(2.3497deg);
-              "
-            >
-              <div class="top-profile__foward">
-                <figure>
-                  <img src="/image/icon.png" alt="" decoding="async" />
-                </figure>
-                <div class="top-profile__txts">
-                  <h2 class="top-profile__hd">
-                    <svg class="svg-text"><text>profile</text></svg>
-                  </h2>
-                  <h3 class="top-profile__name">
-                    <span class="job">Web Director</span
+              ">
+                        <div class="top-profile__foward">
+                            <figure>
+                                <img src="/image/icon.png" alt="" decoding="async" />
+                            </figure>
+                            <div class="top-profile__txts">
+                                <h2 class="top-profile__hd">
+                                    <svg class="svg-text"><text>profile</text></svg>
+                                </h2>
+                                <h3 class="top-profile__name">
+                                    <span class="job">Web Director</span
                     ><span class="name">Masahiro Toda</span>
-                  </h3>
-                  <p class="top-profile__desc">
-                    はじめまして。<br>東京でWebクリエイターとして活動しています。<br>Webサイトの設計からディレクション、コーディングまで
-            幅広く対応しています。ユーザーにとって使いやすく、クライアントのビジネスに貢献できるサイト制作を目指しています。
-                  <br>サイト名のTONDAMAは学生時代のあだ名「とんだま」が由来です。</p>
+                                </h3>
+                                <p class="top-profile__desc">
+                                    はじめまして。<br>東京でWebクリエイターとして活動しています。<br>Webサイトの設計からディレクション、コーディングまで 幅広く対応しています。ユーザーにとって使いやすく、クライアントのビジネスに貢献できるサイト制作を目指しています。
+                                    <br>サイト名のTONDAMAは学生時代のあだ名「とんだま」が由来です。</p>
 
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            </div>
-        </div>
         </section>
 
 
         <!-- Skills -->
-      <section class="skills">
+        <section class="skills">
             <div class="skills__header js-reveal">
                 <h2 class="skills__title">Skills</h2>
             </div>
@@ -208,8 +203,8 @@
             </div>
         </section>
 
-      <!-- Career -->
-      <section class="career">
+        <!-- Career -->
+        <section class="career">
             <div class="career__header js-reveal">
                 <h2 class="career__title">Career</h2>
             </div>
@@ -218,7 +213,7 @@
                     <div class="career__item-year">2022 - 2026</div>
                     <div class="career__item-body">
                         <h3 class="career__item-title">Webディレクター</h3>
-                        <!-- 
+                        <!--
                         <p class="career__item-place">株式会社グローバルゲート</p>
                         <p class="career__item-desc">
                             Webディレクターとしてキャリアをスタート。要件定義からワイヤーフレームの作成、進行管理などを担当し、約30サイトの制作に携わる。
@@ -230,7 +225,7 @@
                         <div class="career__item-year">2021 - 2022</div>
                         <div class="career__item-body">
                             <h3 class="career__item-title">アパレル販売員</h3>
-                            <!-- 
+                            <!--
                             <p class="career__item-place">株式会社NEXUS</p>
                             <p class="career__item-desc">
                                 特にやりたいことを見つけられず、学生時代からアルバイトをしていたアパレルショップで正社員として働き始める。
@@ -241,7 +236,7 @@
                         <div class="career__item-year">2017 - 2021</div>
                         <div class="career__item-body">
                             <h3 class="career__item-title">大学卒業</h3>
-                            <!-- 
+                            <!--
                             <p class="career__item-place">社会学部 社会学科</p>
                             <p class="career__item-desc">
                                 心理学や福祉を専攻。介護福祉業界に興味を持つようになり、就職活動では業界大手から内定を獲得するも、自分を見つめなおし、本当にやりたいことはここではないと考え内定辞退。
@@ -251,17 +246,18 @@
                 </div>
         </section>
 
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer__inner">
-          
-          <div class="footer__bottom">
-            <p class="footer__copy">©2026 TONDAMA. All rights reserved.</p>
-          </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__inner">
+
+                <div class="footer__bottom">
+                    <p class="footer__copy">©2026 TONDAMA. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
         </div>
-      </footer>
-    </div>
-    <!-- /.main-wrap -->
-    <script src="/page.js"></script>
-  </body>
+        <!-- /.main-wrap -->
+        <script src="/page.js"></script>
+</body>
+
 </html>

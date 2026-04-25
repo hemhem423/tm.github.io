@@ -1,27 +1,37 @@
 <!doctype html>
 <html lang="ja">
-  <head>
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TCFBX8WD');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TONDAMA|WEBディレクターのポートフォリオサイト</title>
-    <meta
-      name="description"
-      content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。"
-    />
+    <meta name="description" content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。" />
     <meta name="author" content="Masahiro Toda" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://tondama.com/" />
 
     <!-- ===== OGP (SNSシェア用) ===== -->
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="TONDAMA|WEBディレクターのポートフォリオサイト"
-    />
-    <meta
-      property="og:description"
-      content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。"
-    />
+    <meta property="og:title" content="TONDAMA|WEBディレクターのポートフォリオサイト" />
+    <meta property="og:description" content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。" />
     <meta property="og:url" content="https://tondama.com/" />
     <meta property="og:image" content="https://tondama.com/image/ogp.jpg" />
     <meta property="og:site_name" content="TONDAMA PORTFOLIO" />
@@ -29,14 +39,8 @@
 
     <!-- ===== Twitter Card ===== -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="TONDAMA|WEBディレクターのポートフォリオサイト"
-    />
-    <meta
-      name="twitter:description"
-      content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。"
-    />
+    <meta name="twitter:title" content="TONDAMA|WEBディレクターのポートフォリオサイト" />
+    <meta name="twitter:description" content="東京在住のWebディレクターのポートフォリオサイト。新規サイト制作・リニューアル・LP制作など、Web制作のご相談はお気軽にどうぞ。" />
     <meta name="twitter:image" content="https://tondama.com/image/ogp.jpg" />
 
     <!-- ===== ファビコン ===== -->
@@ -46,18 +50,19 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/page.css" />
-  </head>
+</head>
 
-  <body>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TCFBX8WD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Page Loader -->
     <div class="page-loader" id="js-loader">
-      <div class="page-loader__inner">TONDAM<span>A</span></div>
+        <div class="page-loader__inner">TONDAM<span>A</span></div>
     </div>
 
     <!-- Cursor -->
@@ -75,31 +80,26 @@
           SIDEBAR
       ======================================================== -->
     <aside class="sidebar" id="js-sidebar">
-      <div>
-        <a href="/" class="sidebar__logo"
-          >TONDAM<span>A</span><br /><span class="">P</span>ORTFOLIO</a
+        <div>
+            <a href="/" class="sidebar__logo">TONDAM<span>A</span><br /><span class="">P</span>ORTFOLIO</a
         >
 
         <nav class="sidebar__nav" aria-label="サイドナビ">
           <a href="/" class="sidebar__nav-item" data-sec="hero">
             <span class="sidebar__nav-dot"></span>Home
           </a>
-          <a href="/works" class="sidebar__nav-item" data-sec="works">
-            <span class="sidebar__nav-dot"></span>Works
-          </a>
-          <a href="/about" class="sidebar__nav-item" data-sec="about">
-            <span class="sidebar__nav-dot"></span>About
-          </a>
-          <a
-            href="/contact"
-            class="sidebar__nav-item is-active"
-            data-sec="contact"
-          >
-            <span class="sidebar__nav-dot"></span>Contact
-          </a>
-        </nav>
-      </div>
-      <!--<div class="sidebar__bottom">
+            <a href="/works" class="sidebar__nav-item" data-sec="works">
+                <span class="sidebar__nav-dot"></span>Works
+            </a>
+            <a href="/about" class="sidebar__nav-item" data-sec="about">
+                <span class="sidebar__nav-dot"></span>About
+            </a>
+            <a href="/contact" class="sidebar__nav-item is-active" data-sec="contact">
+                <span class="sidebar__nav-dot"></span>Contact
+            </a>
+            </nav>
+        </div>
+        <!--<div class="sidebar__bottom">
             <div class="sidebar__socials">
               <a href="#" class="sidebar__social" target="_blank" rel="noopener"
                 >Twitter</a
@@ -113,27 +113,25 @@
 
     <!-- MAIN WRAPPER -->
     <div class="main-wrap" id="js-main">
-      <!-- Hero -->
-      <section class="contact-hero">
-        <div class="contact-hero__bg-txt" aria-hidden="true">contact</div>
-        <h1 class="contact-hero__title js-reveal">Contact</h1>
-      </section>
-      <!-- ========================================================
+        <!-- Hero -->
+        <section class="contact-hero">
+            <div class="contact-hero__bg-txt" aria-hidden="true">contact</div>
+            <h1 class="contact-hero__title js-reveal">Contact</h1>
+        </section>
+        <!-- ========================================================
             Contact
         ======================================================== -->
-      <section class="section contact" id="contact">
-        <div class="contact__inner">
-          <div class="js-reveal">
-            <p class="contact__text text-center">
-              お問い合わせはメールにて承っております。<br />
-              新規サイト制作・リニューアル、不具合等、サイト周辺環境に関することなら何でもご相談ください。
-            </p>
-          </div>
-          <div class="js-reveal">
-            <div class="text-center">
-              <p class="link-ml">
-                <span class="ml"
-                  ><a href="mailto:tondama9@gmail.com"
+        <section class="section contact" id="contact">
+            <div class="contact__inner">
+                <div class="js-reveal">
+                    <p class="contact__text text-center">
+                        お問い合わせはメールにて承っております。<br /> 新規サイト制作・リニューアル、不具合等、サイト周辺環境に関することなら何でもご相談ください。
+                    </p>
+                </div>
+                <div class="js-reveal">
+                    <div class="text-center">
+                        <p class="link-ml">
+                            <span class="ml"><a href="mailto:tondama9@gmail.com"
                     >tondama9@gmail.com</a
                   ></span
                 >
@@ -153,91 +151,72 @@
                       >コーディングのみの依頼は可能ですか？</span
                     >
                     <span class="news__icon" aria-hidden="true"></span>
-                  </button>
-                  <div class="news__body faq__body" hidden>
-                    <p>
-                      一部の作業だけでも是非ご相談ください。ご依頼内容に応じてお見積もりいたします。
-                    </p>
-                  </div>
-                </li>
-                <li class="news__item js-reveal">
-                  <button class="news__btn faq-btn" aria-expanded="false">
+                            </button>
+                            <div class="news__body faq__body" hidden>
+                                <p>
+                                    一部の作業だけでも是非ご相談ください。ご依頼内容に応じてお見積もりいたします。
+                                </p>
+                            </div>
+                            </li>
+                            <li class="news__item js-reveal">
+                                <button class="news__btn faq-btn" aria-expanded="false">
                     <span class="news__subject"
                       >対面での打ち合わせは可能ですか？</span
                     >
                     <span class="news__icon" aria-hidden="true"></span>
                   </button>
-                  <div class="news__body faq__body" hidden>
-                    <p>
-                      大変申し訳ありません。基本的には対面の打ち合わせやお電話によるやりとりはお断りしています。まずはメールにてお問い合わせください。
-                    </p>
-                  </div>
-                </li>
-              </ul>
+                                <div class="news__body faq__body" hidden>
+                                    <p>
+                                        大変申し訳ありません。基本的には対面の打ち合わせやお電話によるやりとりはお断りしています。まずはメールにてお問い合わせください。
+                                    </p>
+                                </div>
+                            </li>
+                            </ul>
+                    </div>
+        </section>
+        </div>
+        </section>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="footer__bottom">
+                    <p class="footer__copy">©2026 TONDAMA. All rights reserved.</p>
+                </div>
             </div>
-          </section>
+        </footer>
         </div>
-      </section>
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer__inner">
-          <div class="footer__bottom">
-            <p class="footer__copy">©2026 TONDAMA. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <!-- /.main-wrap -->
+        <!-- /.main-wrap -->
 
-    <!-- ============================================================
+        <!-- ============================================================
             Lightbox (body に直接 append — main-wrap の外)
         ============================================================ -->
-    <div
-      class="lb-overlay"
-      id="js-lb"
-      role="dialog"
-      aria-modal="true"
-      aria-label="作品詳細"
-    >
-      <button class="lb-close" id="js-lb-close" aria-label="閉じる">
+        <div class="lb-overlay" id="js-lb" role="dialog" aria-modal="true" aria-label="作品詳細">
+            <button class="lb-close" id="js-lb-close" aria-label="閉じる">
         <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" /></svg>
       </button>
-      <div class="lb-inner">
-        <div class="lb-img-wrap" id="js-lb-img-wrap">
-          <img src="" alt="" id="js-lb-img" />
-          <button
-            class="lb-arrow lb-arrow--prev"
-            id="js-lb-prev"
-            aria-label="前の作品"
-          >
+            <div class="lb-inner">
+                <div class="lb-img-wrap" id="js-lb-img-wrap">
+                    <img src="" alt="" id="js-lb-img" />
+                    <button class="lb-arrow lb-arrow--prev" id="js-lb-prev" aria-label="前の作品">
             <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
           </button>
-          <button
-            class="lb-arrow lb-arrow--next"
-            id="js-lb-next"
-            aria-label="次の作品"
-          >
+                    <button class="lb-arrow lb-arrow--next" id="js-lb-next" aria-label="次の作品">
             <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
           </button>
-        </div>
-        <div class="lb-info">
-          <p class="lb-info__num" id="js-lb-num">01 / 04</p>
-          <p class="lb-info__cat" id="js-lb-cat"></p>
-          <h2 class="lb-info__title" id="js-lb-title"></h2>
-          <p class="lb-info__desc" id="js-lb-desc"></p>
-          <div class="lb-info__tags" id="js-lb-tags"></div>
-          <a
-            href="#"
-            class="lb-info__link"
-            id="js-lb-link"
-            target="_blank"
-            rel="noopener"
-          >
+                </div>
+                <div class="lb-info">
+                    <p class="lb-info__num" id="js-lb-num">01 / 04</p>
+                    <p class="lb-info__cat" id="js-lb-cat"></p>
+                    <h2 class="lb-info__title" id="js-lb-title"></h2>
+                    <p class="lb-info__desc" id="js-lb-desc"></p>
+                    <div class="lb-info__tags" id="js-lb-tags"></div>
+                    <a href="#" class="lb-info__link" id="js-lb-link" target="_blank" rel="noopener">
             サイトを見る →
           </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <script src="/page.js"></script>
-  </body>
+        <script src="/page.js"></script>
+</body>
+
 </html>
