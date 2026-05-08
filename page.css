@@ -274,12 +274,14 @@
 .skill-card {
     background: var(--color-soft-gray);
     border-radius: 20px;
-    padding: 5rem 3rem;
+    
     transition: transform var(--tr), box-shadow var(--tr);
     position: relative;
     overflow: hidden;
 }
-
+.skill-card .card-desc{
+    padding: 3rem 2rem;
+}
 .skill-card::after {
     content: "";
     position: absolute;
@@ -293,14 +295,6 @@
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.skill-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.1);
-}
-
-.skill-card:hover::after {
-    transform: scaleX(1);
-}
 
 .skill-card__num {
     font-family: var(--font-mono);
@@ -558,9 +552,7 @@
     .section {
         padding: 2rem;
     }
-    .section.about {
-        padding: 0;
-    }
+    
     .profile-block {
         grid-template-columns: 1fr;
         gap: 3.2rem;
