@@ -837,9 +837,11 @@
 /* ---- Main Visual ---- */
 .wd-mainvisual {
   width: 100%;
-  padding: 10rem ;
+  padding: 5rem 10rem ;
   overflow: hidden;
   position: relative;
+  text-align: right;
+  background: #ebebeb;
 }
 .wd-mainvisual img {
   width: 100%;
@@ -871,8 +873,10 @@
 }
 .wd-meta__val {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
+  display: block;
+  padding: 2rem 0;
   color: #fff;
   line-height: 1.4;
 }
@@ -993,7 +997,6 @@
 }
 .wd-step__body { padding-top: 1rem; }
 .wd-step__title {
-  font-family: var(--font-display);
   font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: -0.02em;
