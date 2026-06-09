@@ -85,7 +85,9 @@
          About Page — Page-specific styles
       ============================================================ */
 
-
+.about{
+        padding: 8rem 5rem;
+}
 /* ---- Profile Block ---- */
 
 .profile-block {
